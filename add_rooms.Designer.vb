@@ -26,7 +26,7 @@ Partial Class add_rooms
         txt_rates = New TextBox()
         btn_save_new = New Button()
         Button2 = New Button()
-        Button3 = New Button()
+        btn_close = New Button()
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -67,14 +67,14 @@ Partial Class add_rooms
         Button2.Text = "SAVE AND CLOSE"
         Button2.UseVisualStyleBackColor = True
         ' 
-        ' Button3
+        ' btn_close
         ' 
-        Button3.Location = New Point(271, 227)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(75, 23)
-        Button3.TabIndex = 5
-        Button3.Text = "CLOSE"
-        Button3.UseVisualStyleBackColor = True
+        btn_close.Location = New Point(271, 227)
+        btn_close.Name = "btn_close"
+        btn_close.Size = New Size(75, 23)
+        btn_close.TabIndex = 5
+        btn_close.Text = "CLOSE"
+        btn_close.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
@@ -141,7 +141,7 @@ Partial Class add_rooms
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(Button3)
+        Controls.Add(btn_close)
         Controls.Add(Button2)
         Controls.Add(btn_save_new)
         Controls.Add(txt_rates)
@@ -156,7 +156,7 @@ Partial Class add_rooms
     Friend WithEvents txt_rates As TextBox
     Friend WithEvents btn_save_new As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btn_close As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

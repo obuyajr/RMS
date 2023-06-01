@@ -25,9 +25,18 @@ Public Class add_rooms
 
         cmd.ExecuteNonQuery()
         MsgBox("ROOM ADDED SUCCESSFULLY")
+        txt_roomNo.Text = string.Empty
+        combo_roomType.SelectedItem = 0
+        txt_rates.Text = string.Empty
+        combo_status.SelectedItem = 0
 
 
 
 
+    End Sub
+
+    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+
+        Me.Dispose()
     End Sub
 End Class

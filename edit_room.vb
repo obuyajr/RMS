@@ -65,11 +65,28 @@ Public Class edit_room
         cmd.Parameters.AddWithValue("@rates", txt_rates.Text)
         cmd.Parameters.AddWithValue("@status", combo_status.SelectedItem.ToString())
         cmd.Parameters.AddWithValue("@roomNo", txt_roomNo.Text)
-
+        UpdateGrid()
         cmd.ExecuteNonQuery()
         MsgBox("ROOM UPDATED SUCCESSFULLY")
+
     End Sub
 
+    'update tableGrid
+    Private Sub UpdateGrid()
+        ' Assuming you have a DataGridView control named dgv_rooms
+
+        ' Clear the existing data in the grid
+        DataGridView1.Rows.Clear()
+
+        ' Retrieve updated data from the database and populate the grid
+        cmd = con.CreateCommand()
+        cmd.CommandText = "SELECT * FROM rooms"
+        Dim reader As SqlDataReader = cmd.ExecuteReader()
+        While reader.Read()
+            DataGridView1.Rows.Add(reader("Room_no"), reader("Room_type"), reader("Rates"), reader("Room_status"))
+        End While
+        reader.Close()
+    End Sub
 
 
 

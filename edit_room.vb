@@ -58,6 +58,19 @@ Public Class edit_room
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
 
 
+        cmd = con.CreateCommand()
+        cmd.CommandText = "UPDATE rooms SET room_type = @roomType,
+        rates = @rates, Room_status = @status WHERE room_no = @roomNo"
+        cmd.Parameters.AddWithValue("@roomType", combo_roomType.SelectedItem.ToString())
+        cmd.Parameters.AddWithValue("@rates", txt_rates.Text)
+        cmd.Parameters.AddWithValue("@status", combo_status.SelectedItem.ToString())
+        cmd.Parameters.AddWithValue("@roomNo", txt_roomNo.Text)
 
+        cmd.ExecuteNonQuery()
+        MsgBox("ROOM UPDATED SUCCESSFULLY")
     End Sub
+
+
+
+
 End Class

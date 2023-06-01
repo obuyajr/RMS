@@ -4,4 +4,10 @@
         login_form.Show()
         Me.Close()
     End Sub
+
+    Private Sub btn_bookRoom_Click(sender As Object, e As EventArgs) Handles btn_bookRoom.Click
+        Dim bookies As New Book_Rooms()
+        bookies.Show()
+
+    End Sub
 End Class

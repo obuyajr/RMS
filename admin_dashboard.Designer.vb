@@ -34,12 +34,19 @@ Partial Class admin_dashboard
         DELETEUSERSToolStripMenuItem = New ToolStripMenuItem()
         EeeToolStripMenuItem = New ToolStripMenuItem()
         REPORTSToolStripMenuItem = New ToolStripMenuItem()
+        StatusStrip1 = New StatusStrip()
+        ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        ToolStripStatusLabel2 = New ToolStripStatusLabel()
+        Panel1 = New Panel()
+        btn_logout = New Button()
         MenuStrip1.SuspendLayout()
+        StatusStrip1.SuspendLayout()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(577, 415)
+        Button1.Location = New Point(596, 384)
         Button1.Name = "Button1"
         Button1.Size = New Size(135, 23)
         Button1.TabIndex = 0
@@ -90,25 +97,25 @@ Partial Class admin_dashboard
         ' ADDUSERSToolStripMenuItem
         ' 
         ADDUSERSToolStripMenuItem.Name = "ADDUSERSToolStripMenuItem"
-        ADDUSERSToolStripMenuItem.Size = New Size(148, 22)
+        ADDUSERSToolStripMenuItem.Size = New Size(180, 22)
         ADDUSERSToolStripMenuItem.Text = "ADD USERS"
         ' 
         ' EDITUSERSToolStripMenuItem
         ' 
         EDITUSERSToolStripMenuItem.Name = "EDITUSERSToolStripMenuItem"
-        EDITUSERSToolStripMenuItem.Size = New Size(148, 22)
+        EDITUSERSToolStripMenuItem.Size = New Size(180, 22)
         EDITUSERSToolStripMenuItem.Text = "EDIT USERS"
         ' 
         ' DELETEUSERSToolStripMenuItem
         ' 
         DELETEUSERSToolStripMenuItem.Name = "DELETEUSERSToolStripMenuItem"
-        DELETEUSERSToolStripMenuItem.Size = New Size(148, 22)
+        DELETEUSERSToolStripMenuItem.Size = New Size(180, 22)
         DELETEUSERSToolStripMenuItem.Text = "DELETE USERS"
         ' 
         ' EeeToolStripMenuItem
         ' 
         EeeToolStripMenuItem.Name = "EeeToolStripMenuItem"
-        EeeToolStripMenuItem.Size = New Size(148, 22)
+        EeeToolStripMenuItem.Size = New Size(180, 22)
         EeeToolStripMenuItem.Text = "eee"
         ' 
         ' REPORTSToolStripMenuItem
@@ -117,11 +124,56 @@ Partial Class admin_dashboard
         REPORTSToolStripMenuItem.Size = New Size(66, 20)
         REPORTSToolStripMenuItem.Text = "REPORTS"
         ' 
+        ' StatusStrip1
+        ' 
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2})
+        StatusStrip1.Location = New Point(0, 428)
+        StatusStrip1.Name = "StatusStrip1"
+        StatusStrip1.Size = New Size(800, 22)
+        StatusStrip1.TabIndex = 2
+        StatusStrip1.Text = "StatusStrip1"
+        ' 
+        ' ToolStripStatusLabel1
+        ' 
+        ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        ToolStripStatusLabel1.Size = New Size(80, 17)
+        ToolStripStatusLabel1.Text = "Logged in as: "
+        ' 
+        ' ToolStripStatusLabel2
+        ' 
+        ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        ToolStripStatusLabel2.Size = New Size(119, 17)
+        ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.IndianRed
+        Panel1.Controls.Add(btn_logout)
+        Panel1.Location = New Point(0, 42)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(800, 100)
+        Panel1.TabIndex = 3
+        ' 
+        ' btn_logout
+        ' 
+        btn_logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_logout.Image = My.Resources.Resources.log_out_circle_regular_48
+        btn_logout.ImageAlign = ContentAlignment.TopCenter
+        btn_logout.Location = New Point(682, 14)
+        btn_logout.Name = "btn_logout"
+        btn_logout.Size = New Size(106, 70)
+        btn_logout.TabIndex = 1
+        btn_logout.Text = "LOGOUT"
+        btn_logout.TextAlign = ContentAlignment.BottomCenter
+        btn_logout.UseVisualStyleBackColor = True
+        ' 
         ' admin_dashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Panel1)
+        Controls.Add(StatusStrip1)
         Controls.Add(Button1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
@@ -129,6 +181,9 @@ Partial Class admin_dashboard
         Text = "admin_dashboard"
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
+        StatusStrip1.ResumeLayout(False)
+        StatusStrip1.PerformLayout()
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -145,4 +200,9 @@ Partial Class admin_dashboard
     Friend WithEvents EDITUSERSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DELETEUSERSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EeeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btn_logout As Button
 End Class

@@ -22,39 +22,41 @@ Partial Class add_rooms
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        Button1 = New Button()
+        txt_roomNo = New TextBox()
+        txt_rates = New TextBox()
+        btn_save_new = New Button()
         Button2 = New Button()
         Button3 = New Button()
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
-        ComboBox1 = New ComboBox()
+        combo_roomType = New ComboBox()
+        combo_status = New ComboBox()
+        Label4 = New Label()
         SuspendLayout()
         ' 
-        ' TextBox1
+        ' txt_roomNo
         ' 
-        TextBox1.Location = New Point(142, 44)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(121, 23)
-        TextBox1.TabIndex = 0
+        txt_roomNo.Location = New Point(142, 44)
+        txt_roomNo.Name = "txt_roomNo"
+        txt_roomNo.Size = New Size(121, 23)
+        txt_roomNo.TabIndex = 0
         ' 
-        ' TextBox2
+        ' txt_rates
         ' 
-        TextBox2.Location = New Point(142, 124)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(100, 23)
-        TextBox2.TabIndex = 1
+        txt_rates.Location = New Point(142, 124)
+        txt_rates.Name = "txt_rates"
+        txt_rates.Size = New Size(100, 23)
+        txt_rates.TabIndex = 1
         ' 
-        ' Button1
+        ' btn_save_new
         ' 
-        Button1.Location = New Point(12, 227)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(116, 23)
-        Button1.TabIndex = 3
-        Button1.Text = "SAVE AND NEW"
-        Button1.UseVisualStyleBackColor = True
+        btn_save_new.Location = New Point(12, 227)
+        btn_save_new.Name = "btn_save_new"
+        btn_save_new.Size = New Size(116, 23)
+        btn_save_new.TabIndex = 3
+        btn_save_new.Text = "SAVE AND NEW"
+        btn_save_new.UseVisualStyleBackColor = True
         ' 
         ' Button2
         ' 
@@ -101,41 +103,64 @@ Partial Class add_rooms
         Label3.TabIndex = 8
         Label3.Text = "RATES"
         ' 
-        ' ComboBox1
+        ' combo_roomType
         ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(142, 84)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(121, 23)
-        ComboBox1.TabIndex = 9
+        combo_roomType.FormattingEnabled = True
+        combo_roomType.Items.AddRange(New Object() {"DELUXE", "NORMAL"})
+        combo_roomType.Location = New Point(142, 84)
+        combo_roomType.Name = "combo_roomType"
+        combo_roomType.Size = New Size(121, 23)
+        combo_roomType.TabIndex = 9
+        ' 
+        ' combo_status
+        ' 
+        combo_status.FormattingEnabled = True
+        combo_status.Items.AddRange(New Object() {"UNBOOKED"})
+        combo_status.Location = New Point(142, 164)
+        combo_status.Name = "combo_status"
+        combo_status.Size = New Size(121, 23)
+        combo_status.TabIndex = 10
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(78, 172)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(45, 15)
+        Label4.TabIndex = 11
+        Label4.Text = "STATUS"
         ' 
         ' add_rooms
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(372, 292)
-        Controls.Add(ComboBox1)
+        Controls.Add(Label4)
+        Controls.Add(combo_status)
+        Controls.Add(combo_roomType)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(Button3)
         Controls.Add(Button2)
-        Controls.Add(Button1)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(btn_save_new)
+        Controls.Add(txt_rates)
+        Controls.Add(txt_roomNo)
         Name = "add_rooms"
         Text = "add_rooms"
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents txt_roomNo As TextBox
+    Friend WithEvents txt_rates As TextBox
+    Friend WithEvents btn_save_new As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents combo_roomType As ComboBox
+    Friend WithEvents combo_status As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

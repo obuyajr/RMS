@@ -26,13 +26,14 @@ Partial Class admin_dashboard
         MenuStrip1 = New MenuStrip()
         ToolStripMenuItem1 = New ToolStripMenuItem()
         ToolStripMenuItem2 = New ToolStripMenuItem()
-        USERSToolStripMenuItem = New ToolStripMenuItem()
-        REPORTSToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem3 = New ToolStripMenuItem()
         DELETEROOMSToolStripMenuItem = New ToolStripMenuItem()
+        USERSToolStripMenuItem = New ToolStripMenuItem()
         ADDUSERSToolStripMenuItem = New ToolStripMenuItem()
         EDITUSERSToolStripMenuItem = New ToolStripMenuItem()
         DELETEUSERSToolStripMenuItem = New ToolStripMenuItem()
+        EeeToolStripMenuItem = New ToolStripMenuItem()
+        REPORTSToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -67,19 +68,6 @@ Partial Class admin_dashboard
         ToolStripMenuItem2.Size = New Size(180, 22)
         ToolStripMenuItem2.Text = "ADD ROOMS"
         ' 
-        ' USERSToolStripMenuItem
-        ' 
-        USERSToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ADDUSERSToolStripMenuItem, EDITUSERSToolStripMenuItem, DELETEUSERSToolStripMenuItem})
-        USERSToolStripMenuItem.Name = "USERSToolStripMenuItem"
-        USERSToolStripMenuItem.Size = New Size(52, 20)
-        USERSToolStripMenuItem.Text = "USERS"
-        ' 
-        ' REPORTSToolStripMenuItem
-        ' 
-        REPORTSToolStripMenuItem.Name = "REPORTSToolStripMenuItem"
-        REPORTSToolStripMenuItem.Size = New Size(66, 20)
-        REPORTSToolStripMenuItem.Text = "REPORTS"
-        ' 
         ' ToolStripMenuItem3
         ' 
         ToolStripMenuItem3.Name = "ToolStripMenuItem3"
@@ -92,23 +80,42 @@ Partial Class admin_dashboard
         DELETEROOMSToolStripMenuItem.Size = New Size(180, 22)
         DELETEROOMSToolStripMenuItem.Text = "DELETE ROOMS"
         ' 
+        ' USERSToolStripMenuItem
+        ' 
+        USERSToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ADDUSERSToolStripMenuItem, EDITUSERSToolStripMenuItem, DELETEUSERSToolStripMenuItem, EeeToolStripMenuItem})
+        USERSToolStripMenuItem.Name = "USERSToolStripMenuItem"
+        USERSToolStripMenuItem.Size = New Size(52, 20)
+        USERSToolStripMenuItem.Text = "USERS"
+        ' 
         ' ADDUSERSToolStripMenuItem
         ' 
         ADDUSERSToolStripMenuItem.Name = "ADDUSERSToolStripMenuItem"
-        ADDUSERSToolStripMenuItem.Size = New Size(180, 22)
+        ADDUSERSToolStripMenuItem.Size = New Size(148, 22)
         ADDUSERSToolStripMenuItem.Text = "ADD USERS"
         ' 
         ' EDITUSERSToolStripMenuItem
         ' 
         EDITUSERSToolStripMenuItem.Name = "EDITUSERSToolStripMenuItem"
-        EDITUSERSToolStripMenuItem.Size = New Size(180, 22)
+        EDITUSERSToolStripMenuItem.Size = New Size(148, 22)
         EDITUSERSToolStripMenuItem.Text = "EDIT USERS"
         ' 
         ' DELETEUSERSToolStripMenuItem
         ' 
         DELETEUSERSToolStripMenuItem.Name = "DELETEUSERSToolStripMenuItem"
-        DELETEUSERSToolStripMenuItem.Size = New Size(180, 22)
+        DELETEUSERSToolStripMenuItem.Size = New Size(148, 22)
         DELETEUSERSToolStripMenuItem.Text = "DELETE USERS"
+        ' 
+        ' EeeToolStripMenuItem
+        ' 
+        EeeToolStripMenuItem.Name = "EeeToolStripMenuItem"
+        EeeToolStripMenuItem.Size = New Size(148, 22)
+        EeeToolStripMenuItem.Text = "eee"
+        ' 
+        ' REPORTSToolStripMenuItem
+        ' 
+        REPORTSToolStripMenuItem.Name = "REPORTSToolStripMenuItem"
+        REPORTSToolStripMenuItem.Size = New Size(66, 20)
+        REPORTSToolStripMenuItem.Text = "REPORTS"
         ' 
         ' admin_dashboard
         ' 
@@ -137,4 +144,5 @@ Partial Class admin_dashboard
     Friend WithEvents ADDUSERSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EDITUSERSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DELETEUSERSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EeeToolStripMenuItem As ToolStripMenuItem
 End Class

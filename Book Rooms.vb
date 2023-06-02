@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Drawing.Printing
 
 Public Class Book_Rooms
     Dim con As New SqlConnection
@@ -72,16 +73,29 @@ Public Class Book_Rooms
 
             ' Assuming you have a "bookings" table in your database
             ' Insert a new booking record into the database
-            Dim query As String = "INSERT INTO bookings (Room_no, Room_type, Rates) VALUES (@RoomNo, @RoomType, @Rates)"
+            Dim query As String = "INSERT INTO bookings (room_no, room_type, rates, room_status,
+                                    guest_name,phone_number, checkin_date, checkout_date, total) " &
+                              "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus,
+                                @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total)"
             Using cmd As New SqlCommand(query, con)
+
                 cmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
                 cmd.Parameters.AddWithValue("@RoomType", roomType.Text)
-                cmd.Parameters.AddWithValue("@Rates", txt_rates.Text)
+                cmd.Parameters.AddWithValue("@Rates", Decimal.Parse(txt_rates.Text))
+                cmd.Parameters.AddWithValue("@RoomStatus", "Booked")
+                cmd.Parameters.AddWithValue("@GuestName", txt_guestName.Text)
+                cmd.Parameters.AddWithValue("@PhoneNumber", txt_phoneNo.Text)
+                cmd.Parameters.AddWithValue("@CheckinDate", DateTime.Parse(checkin_date.Value))
+                cmd.Parameters.AddWithValue("@CheckoutDate", DateTime.Parse(checkout_date.Value))
+                cmd.Parameters.AddWithValue("@Total", Decimal.Parse(txt_total.Text))
+                ' cmd.Parameters.AddWithValue("@Rates", txt_rates.Text)
                 cmd.ExecuteNonQuery()
             End Using
 
             ' Show a message to indicate the successful booking
             MessageBox.Show("Room booked successfully!", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            PrintPreviewBookingDetails()
 
             ' Clear the selected room details
             txt_roomNo.Text = ""
@@ -91,5 +105,48 @@ Public Class Book_Rooms
             ' No room is selected, display an error message
             MessageBox.Show("Please select a room to book.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+
+        'print bookings
+
+
+
+
     End Sub
+
+
+
+    'print booking
+
+    Private Sub PrintPreviewBookingDetails()
+        Dim printDocument As New PrintDocument()
+        AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
+
+        Dim printPreviewDialog As New PrintPreviewDialog()
+        printPreviewDialog.Document = printDocument
+        printPreviewDialog.ShowDialog()
+    End Sub
+
+    Private Sub PrintDocument_PrintPage(sender As Object, e As PrintPageEventArgs)
+        Dim font As New Font("Arial", 12, FontStyle.Regular)
+        Dim brush As New SolidBrush(Color.Black)
+        Dim startX As Integer = 10
+        Dim startY As Integer = 10
+        Dim lineHeight As Integer = 20
+
+        ' Print the booking details
+        e.Graphics.DrawString("Booking Details", font, brush, startX, startY)
+        startY += lineHeight
+        e.Graphics.DrawString("Room No: " & txt_roomNo.Text, font, brush, startX, startY)
+        startY += lineHeight
+        e.Graphics.DrawString("Room Type: " & roomType.Text, font, brush, startX, startY)
+        startY += lineHeight
+        e.Graphics.DrawString("Rates: " & txt_rates.Text, font, brush, startX, startY)
+        startY += lineHeight
+        ' ... Print other details as needed ...
+
+        ' Dispose of the font and brush objects
+        font.Dispose()
+        brush.Dispose()
+    End Sub
+    '
 End Class

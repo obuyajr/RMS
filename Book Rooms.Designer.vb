@@ -27,22 +27,23 @@ Partial Class Book_Rooms
         Label2 = New Label()
         DataGridView1 = New DataGridView()
         Label3 = New Label()
-        DateTimePicker1 = New DateTimePicker()
-        DateTimePicker2 = New DateTimePicker()
+        checkin_date = New DateTimePicker()
+        checkout_date = New DateTimePicker()
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
         Label7 = New Label()
         Label8 = New Label()
-        TextBox1 = New TextBox()
+        txt_total = New TextBox()
         txt_roomNo = New TextBox()
         txt_rates = New TextBox()
-        TextBox4 = New TextBox()
-        TextBox5 = New TextBox()
+        txt_guestName = New TextBox()
+        txt_phoneNo = New TextBox()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
         ToolStripStatusLabel2 = New ToolStripStatusLabel()
         roomType = New TextBox()
+        txt_roomStatus = New TextBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         StatusStrip1.SuspendLayout()
         SuspendLayout()
@@ -93,19 +94,19 @@ Partial Class Book_Rooms
         Label3.TabIndex = 4
         Label3.Text = "Rates"
         ' 
-        ' DateTimePicker1
+        ' checkin_date
         ' 
-        DateTimePicker1.Location = New Point(617, 215)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(200, 23)
-        DateTimePicker1.TabIndex = 5
+        checkin_date.Location = New Point(617, 215)
+        checkin_date.Name = "checkin_date"
+        checkin_date.Size = New Size(200, 23)
+        checkin_date.TabIndex = 5
         ' 
-        ' DateTimePicker2
+        ' checkout_date
         ' 
-        DateTimePicker2.Location = New Point(618, 270)
-        DateTimePicker2.Name = "DateTimePicker2"
-        DateTimePicker2.Size = New Size(200, 23)
-        DateTimePicker2.TabIndex = 6
+        checkout_date.Location = New Point(618, 270)
+        checkout_date.Name = "checkout_date"
+        checkout_date.Size = New Size(200, 23)
+        checkout_date.TabIndex = 6
         ' 
         ' Label4
         ' 
@@ -153,14 +154,14 @@ Partial Class Book_Rooms
         Label8.TabIndex = 11
         Label8.Text = "TOTAL"
         ' 
-        ' TextBox1
+        ' txt_total
         ' 
-        TextBox1.BackColor = SystemColors.MenuText
-        TextBox1.ForeColor = Color.Yellow
-        TextBox1.Location = New Point(623, 318)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(100, 23)
-        TextBox1.TabIndex = 12
+        txt_total.BackColor = SystemColors.MenuText
+        txt_total.ForeColor = Color.Yellow
+        txt_total.Location = New Point(623, 318)
+        txt_total.Name = "txt_total"
+        txt_total.Size = New Size(100, 23)
+        txt_total.TabIndex = 12
         ' 
         ' txt_roomNo
         ' 
@@ -178,19 +179,19 @@ Partial Class Book_Rooms
         txt_rates.Size = New Size(105, 23)
         txt_rates.TabIndex = 14
         ' 
-        ' TextBox4
+        ' txt_guestName
         ' 
-        TextBox4.Location = New Point(618, 129)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(105, 23)
-        TextBox4.TabIndex = 15
+        txt_guestName.Location = New Point(618, 129)
+        txt_guestName.Name = "txt_guestName"
+        txt_guestName.Size = New Size(105, 23)
+        txt_guestName.TabIndex = 15
         ' 
-        ' TextBox5
+        ' txt_phoneNo
         ' 
-        TextBox5.Location = New Point(618, 173)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(105, 23)
-        TextBox5.TabIndex = 16
+        txt_phoneNo.Location = New Point(618, 173)
+        txt_phoneNo.Name = "txt_phoneNo"
+        txt_phoneNo.Size = New Size(105, 23)
+        txt_phoneNo.TabIndex = 16
         ' 
         ' StatusStrip1
         ' 
@@ -220,26 +221,34 @@ Partial Class Book_Rooms
         roomType.Size = New Size(100, 23)
         roomType.TabIndex = 19
         ' 
+        ' txt_roomStatus
+        ' 
+        txt_roomStatus.Location = New Point(622, 113)
+        txt_roomStatus.Name = "txt_roomStatus"
+        txt_roomStatus.Size = New Size(100, 23)
+        txt_roomStatus.TabIndex = 20
+        ' 
         ' Book_Rooms
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.GhostWhite
         ClientSize = New Size(829, 492)
+        Controls.Add(txt_roomStatus)
         Controls.Add(roomType)
         Controls.Add(StatusStrip1)
-        Controls.Add(TextBox5)
-        Controls.Add(TextBox4)
+        Controls.Add(txt_phoneNo)
+        Controls.Add(txt_guestName)
         Controls.Add(txt_rates)
         Controls.Add(txt_roomNo)
-        Controls.Add(TextBox1)
+        Controls.Add(txt_total)
         Controls.Add(Label8)
         Controls.Add(Label7)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
-        Controls.Add(DateTimePicker2)
-        Controls.Add(DateTimePicker1)
+        Controls.Add(checkout_date)
+        Controls.Add(checkin_date)
         Controls.Add(Label3)
         Controls.Add(DataGridView1)
         Controls.Add(Label2)
@@ -259,20 +268,21 @@ Partial Class Book_Rooms
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label3 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents checkin_date As DateTimePicker
+    Friend WithEvents checkout_date As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txt_total As TextBox
     Friend WithEvents txt_roomNo As TextBox
     Friend WithEvents txt_rates As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txt_guestName As TextBox
+    Friend WithEvents txt_phoneNo As TextBox
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents roomType As TextBox
+    Friend WithEvents txt_roomStatus As TextBox
 End Class

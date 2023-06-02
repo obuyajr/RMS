@@ -95,7 +95,7 @@ Public Class Book_Rooms
             ' Show a message to indicate the successful booking
             MessageBox.Show("Room booked successfully!", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            PrintPreviewBookingDetails()
+
 
             ' Clear the selected room details
             txt_roomNo.Text = ""
@@ -106,47 +106,11 @@ Public Class Book_Rooms
             MessageBox.Show("Please select a room to book.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
-        'print bookings
+
 
 
 
 
     End Sub
 
-
-
-    'print booking
-
-    Private Sub PrintPreviewBookingDetails()
-        Dim printDocument As New PrintDocument()
-        AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
-
-        Dim printPreviewDialog As New PrintPreviewDialog()
-        printPreviewDialog.Document = printDocument
-        printPreviewDialog.ShowDialog()
-    End Sub
-
-    Private Sub PrintDocument_PrintPage(sender As Object, e As PrintPageEventArgs)
-        Dim font As New Font("Arial", 12, FontStyle.Regular)
-        Dim brush As New SolidBrush(Color.Black)
-        Dim startX As Integer = 10
-        Dim startY As Integer = 10
-        Dim lineHeight As Integer = 20
-
-        ' Print the booking details
-        e.Graphics.DrawString("Booking Details", font, brush, startX, startY)
-        startY += lineHeight
-        e.Graphics.DrawString("Room No: " & txt_roomNo.Text, font, brush, startX, startY)
-        startY += lineHeight
-        e.Graphics.DrawString("Room Type: " & roomType.Text, font, brush, startX, startY)
-        startY += lineHeight
-        e.Graphics.DrawString("Rates: " & txt_rates.Text, font, brush, startX, startY)
-        startY += lineHeight
-        ' ... Print other details as needed ...
-
-        ' Dispose of the font and brush objects
-        font.Dispose()
-        brush.Dispose()
-    End Sub
-    '
 End Class

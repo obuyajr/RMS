@@ -18,5 +18,8 @@
 
     End Sub
 
-
+    Private Sub ADDUSERSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ADDUSERSToolStripMenuItem.Click
+        Dim addUsers As New add_users()
+        addUsers.Show()
+    End Sub
 End Class

@@ -27,12 +27,9 @@ Partial Class admin_dashboard
         ToolStripMenuItem1 = New ToolStripMenuItem()
         ToolStripMenuItem2 = New ToolStripMenuItem()
         ToolStripMenuItem3 = New ToolStripMenuItem()
-        DELETEROOMSToolStripMenuItem = New ToolStripMenuItem()
         USERSToolStripMenuItem = New ToolStripMenuItem()
         ADDUSERSToolStripMenuItem = New ToolStripMenuItem()
         EDITUSERSToolStripMenuItem = New ToolStripMenuItem()
-        DELETEUSERSToolStripMenuItem = New ToolStripMenuItem()
-        EeeToolStripMenuItem = New ToolStripMenuItem()
         REPORTSToolStripMenuItem = New ToolStripMenuItem()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
@@ -64,7 +61,7 @@ Partial Class admin_dashboard
         ' 
         ' ToolStripMenuItem1
         ' 
-        ToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem2, ToolStripMenuItem3, DELETEROOMSToolStripMenuItem})
+        ToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {ToolStripMenuItem2, ToolStripMenuItem3})
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         ToolStripMenuItem1.Size = New Size(61, 20)
         ToolStripMenuItem1.Text = "ROOMS"
@@ -72,24 +69,18 @@ Partial Class admin_dashboard
         ' ToolStripMenuItem2
         ' 
         ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        ToolStripMenuItem2.Size = New Size(180, 22)
+        ToolStripMenuItem2.Size = New Size(143, 22)
         ToolStripMenuItem2.Text = "ADD ROOMS"
         ' 
         ' ToolStripMenuItem3
         ' 
         ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        ToolStripMenuItem3.Size = New Size(180, 22)
+        ToolStripMenuItem3.Size = New Size(143, 22)
         ToolStripMenuItem3.Text = "EDIT ROOMS"
-        ' 
-        ' DELETEROOMSToolStripMenuItem
-        ' 
-        DELETEROOMSToolStripMenuItem.Name = "DELETEROOMSToolStripMenuItem"
-        DELETEROOMSToolStripMenuItem.Size = New Size(180, 22)
-        DELETEROOMSToolStripMenuItem.Text = "DELETE ROOMS"
         ' 
         ' USERSToolStripMenuItem
         ' 
-        USERSToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ADDUSERSToolStripMenuItem, EDITUSERSToolStripMenuItem, DELETEUSERSToolStripMenuItem, EeeToolStripMenuItem})
+        USERSToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ADDUSERSToolStripMenuItem, EDITUSERSToolStripMenuItem})
         USERSToolStripMenuItem.Name = "USERSToolStripMenuItem"
         USERSToolStripMenuItem.Size = New Size(52, 20)
         USERSToolStripMenuItem.Text = "USERS"
@@ -105,18 +96,6 @@ Partial Class admin_dashboard
         EDITUSERSToolStripMenuItem.Name = "EDITUSERSToolStripMenuItem"
         EDITUSERSToolStripMenuItem.Size = New Size(180, 22)
         EDITUSERSToolStripMenuItem.Text = "EDIT USERS"
-        ' 
-        ' DELETEUSERSToolStripMenuItem
-        ' 
-        DELETEUSERSToolStripMenuItem.Name = "DELETEUSERSToolStripMenuItem"
-        DELETEUSERSToolStripMenuItem.Size = New Size(180, 22)
-        DELETEUSERSToolStripMenuItem.Text = "DELETE USERS"
-        ' 
-        ' EeeToolStripMenuItem
-        ' 
-        EeeToolStripMenuItem.Name = "EeeToolStripMenuItem"
-        EeeToolStripMenuItem.Size = New Size(180, 22)
-        EeeToolStripMenuItem.Text = "eee"
         ' 
         ' REPORTSToolStripMenuItem
         ' 
@@ -195,11 +174,8 @@ Partial Class admin_dashboard
     Friend WithEvents USERSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents REPORTSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents DELETEROOMSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ADDUSERSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EDITUSERSToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DELETEUSERSToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel

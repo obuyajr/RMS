@@ -5,6 +5,7 @@ Public Class edit_room
     Dim cmd As New SqlCommand
 
     Private Sub edit_room_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'populate dataGridView
         con.ConnectionString = "Data Source=DESKTOP-KCVKSCU\DESKTOPKCVKSCU;Initial Catalog=vb_login;Integrated Security=True"
         If con.State = ConnectionState.Open Then
             con.Close()

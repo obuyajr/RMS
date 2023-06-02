@@ -35,17 +35,27 @@ Partial Class Book_Rooms
         Label7 = New Label()
         Label8 = New Label()
         TextBox1 = New TextBox()
+        txt_roomNo = New TextBox()
+        txt_rates = New TextBox()
+        TextBox4 = New TextBox()
+        TextBox5 = New TextBox()
+        StatusStrip1 = New StatusStrip()
+        ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        ToolStripStatusLabel2 = New ToolStripStatusLabel()
+        roomType = New TextBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(588, 391)
+        Button1.BackColor = Color.Crimson
+        Button1.Location = New Point(623, 380)
         Button1.Name = "Button1"
-        Button1.Size = New Size(118, 23)
+        Button1.Size = New Size(118, 41)
         Button1.TabIndex = 0
         Button1.Text = "Book n Print"
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
@@ -77,7 +87,7 @@ Partial Class Book_Rooms
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(553, 112)
+        Label3.Location = New Point(553, 93)
         Label3.Name = "Label3"
         Label3.Size = New Size(35, 15)
         Label3.TabIndex = 4
@@ -85,14 +95,14 @@ Partial Class Book_Rooms
         ' 
         ' DateTimePicker1
         ' 
-        DateTimePicker1.Location = New Point(588, 215)
+        DateTimePicker1.Location = New Point(617, 215)
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(200, 23)
         DateTimePicker1.TabIndex = 5
         ' 
         ' DateTimePicker2
         ' 
-        DateTimePicker2.Location = New Point(588, 259)
+        DateTimePicker2.Location = New Point(618, 270)
         DateTimePicker2.Name = "DateTimePicker2"
         DateTimePicker2.Size = New Size(200, 23)
         DateTimePicker2.TabIndex = 6
@@ -100,7 +110,7 @@ Partial Class Book_Rooms
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(553, 147)
+        Label4.Location = New Point(516, 132)
         Label4.Name = "Label4"
         Label4.Size = New Size(72, 15)
         Label4.TabIndex = 7
@@ -109,7 +119,7 @@ Partial Class Book_Rooms
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(553, 179)
+        Label5.Location = New Point(505, 181)
         Label5.Name = "Label5"
         Label5.Size = New Size(83, 15)
         Label5.TabIndex = 8
@@ -118,7 +128,7 @@ Partial Class Book_Rooms
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(525, 231)
+        Label6.Location = New Point(533, 223)
         Label6.Name = "Label6"
         Label6.Size = New Size(55, 15)
         Label6.TabIndex = 9
@@ -127,7 +137,7 @@ Partial Class Book_Rooms
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(546, 276)
+        Label7.Location = New Point(525, 276)
         Label7.Name = "Label7"
         Label7.Size = New Size(63, 15)
         Label7.TabIndex = 10
@@ -145,17 +155,83 @@ Partial Class Book_Rooms
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(652, 328)
+        TextBox1.BackColor = SystemColors.MenuText
+        TextBox1.ForeColor = Color.Yellow
+        TextBox1.Location = New Point(623, 318)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(100, 23)
         TextBox1.TabIndex = 12
+        ' 
+        ' txt_roomNo
+        ' 
+        txt_roomNo.BackColor = SystemColors.Desktop
+        txt_roomNo.ForeColor = SystemColors.MenuHighlight
+        txt_roomNo.Location = New Point(617, 12)
+        txt_roomNo.Name = "txt_roomNo"
+        txt_roomNo.Size = New Size(106, 23)
+        txt_roomNo.TabIndex = 13
+        ' 
+        ' txt_rates
+        ' 
+        txt_rates.Location = New Point(618, 85)
+        txt_rates.Name = "txt_rates"
+        txt_rates.Size = New Size(105, 23)
+        txt_rates.TabIndex = 14
+        ' 
+        ' TextBox4
+        ' 
+        TextBox4.Location = New Point(618, 129)
+        TextBox4.Name = "TextBox4"
+        TextBox4.Size = New Size(105, 23)
+        TextBox4.TabIndex = 15
+        ' 
+        ' TextBox5
+        ' 
+        TextBox5.Location = New Point(618, 173)
+        TextBox5.Name = "TextBox5"
+        TextBox5.Size = New Size(105, 23)
+        TextBox5.TabIndex = 16
+        ' 
+        ' StatusStrip1
+        ' 
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2})
+        StatusStrip1.Location = New Point(0, 470)
+        StatusStrip1.Name = "StatusStrip1"
+        StatusStrip1.Size = New Size(829, 22)
+        StatusStrip1.TabIndex = 18
+        StatusStrip1.Text = "StatusStrip1"
+        ' 
+        ' ToolStripStatusLabel1
+        ' 
+        ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        ToolStripStatusLabel1.Size = New Size(0, 17)
+        ' 
+        ' ToolStripStatusLabel2
+        ' 
+        ToolStripStatusLabel2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        ToolStripStatusLabel2.Size = New Size(88, 17)
+        ToolStripStatusLabel2.Text = "Loogged in as :"
+        ' 
+        ' roomType
+        ' 
+        roomType.Location = New Point(616, 52)
+        roomType.Name = "roomType"
+        roomType.Size = New Size(100, 23)
+        roomType.TabIndex = 19
         ' 
         ' Book_Rooms
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Navy
-        ClientSize = New Size(800, 450)
+        BackColor = Color.GhostWhite
+        ClientSize = New Size(829, 492)
+        Controls.Add(roomType)
+        Controls.Add(StatusStrip1)
+        Controls.Add(TextBox5)
+        Controls.Add(TextBox4)
+        Controls.Add(txt_rates)
+        Controls.Add(txt_roomNo)
         Controls.Add(TextBox1)
         Controls.Add(Label8)
         Controls.Add(Label7)
@@ -172,6 +248,8 @@ Partial Class Book_Rooms
         Name = "Book_Rooms"
         Text = "Book_Rooms"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        StatusStrip1.ResumeLayout(False)
+        StatusStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -189,4 +267,12 @@ Partial Class Book_Rooms
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txt_roomNo As TextBox
+    Friend WithEvents txt_rates As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents roomType As TextBox
 End Class

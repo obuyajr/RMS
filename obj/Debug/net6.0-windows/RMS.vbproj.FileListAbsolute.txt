@@ -27,3 +27,4 @@ C:\Users\felix\OneDrive\Desktop\VB net\RMS\bin\Debug\net6.0-windows\RMS.pdb
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.genruntimeconfig.cache
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\ref\RMS.dll
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.edit_room.resources
+C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.Book_Rooms.resources

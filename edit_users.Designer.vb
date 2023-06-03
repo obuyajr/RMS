@@ -28,7 +28,7 @@ Partial Class edit_users
         Label2 = New Label()
         Label3 = New Label()
         DataGridView1 = New DataGridView()
-        Button1 = New Button()
+        btn_edit = New Button()
         Button2 = New Button()
         btn_close = New Button()
         combo_utype = New ComboBox()
@@ -88,16 +88,16 @@ Partial Class edit_users
         DataGridView1.Size = New Size(529, 394)
         DataGridView1.TabIndex = 6
         ' 
-        ' Button1
+        ' btn_edit
         ' 
-        Button1.BackColor = SystemColors.Highlight
-        Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(537, 248)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(75, 33)
-        Button1.TabIndex = 7
-        Button1.Text = "EDIT"
-        Button1.UseVisualStyleBackColor = False
+        btn_edit.BackColor = SystemColors.Highlight
+        btn_edit.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_edit.Location = New Point(537, 248)
+        btn_edit.Name = "btn_edit"
+        btn_edit.Size = New Size(75, 33)
+        btn_edit.TabIndex = 7
+        btn_edit.Text = "EDIT"
+        btn_edit.UseVisualStyleBackColor = False
         ' 
         ' Button2
         ' 
@@ -138,7 +138,7 @@ Partial Class edit_users
         Controls.Add(combo_utype)
         Controls.Add(btn_close)
         Controls.Add(Button2)
-        Controls.Add(Button1)
+        Controls.Add(btn_edit)
         Controls.Add(DataGridView1)
         Controls.Add(Label3)
         Controls.Add(Label2)
@@ -158,7 +158,7 @@ Partial Class edit_users
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_edit As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents btn_close As Button
     Friend WithEvents combo_utype As ComboBox

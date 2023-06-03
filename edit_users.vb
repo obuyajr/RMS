@@ -59,4 +59,25 @@ Public Class edit_users
             End If
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+        cmd = con.CreateCommand()
+        cmd.CommandText = "UPDATE user_login SET username = @username,
+                           password = @password,
+                           usertype = @usertype 
+                           WHERE username = @originalUsername"
+
+        cmd.Parameters.AddWithValue("@username", txt_uname.Text.ToUpper())
+
+        cmd.Parameters.AddWithValue("@password", txt_password.Text)
+        cmd.Parameters.AddWithValue("@usertype", combo_utype.SelectedItem.ToString())
+        cmd.Parameters.AddWithValue("@originalUsername", txt_uname.Text)
+        'UpdateGrid()
+        cmd.ExecuteNonQuery()
+        MsgBox("USER UPDATED SUCCESSFULLY")
+    End Sub
+
+    Private Sub txt_uname_TextChanged(sender As Object, e As EventArgs) Handles txt_uname.TextChanged
+        txt_uname.CharacterCasing = CharacterCasing.Upper
+    End Sub
 End Class

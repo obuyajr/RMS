@@ -5,6 +5,13 @@ Imports Microsoft.VisualBasic.ApplicationServices
 Public Class Form1
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         ' Define the connection string to the database
+        ' Check if the username, password, and user type fields are empty
+        If String.IsNullOrWhiteSpace(txt_uname.Text) OrElse String.IsNullOrWhiteSpace(txt_pwd.Text) OrElse combo_utype.SelectedItem Is Nothing Then
+            MessageBox.Show("Please fill in all fields.", "Incomplete Form", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        '
         Dim connectionString As String = "Data Source=DESKTOP-KCVKSCU\DESKTOPKCVKSCU;Initial Catalog=vb_login;Integrated Security=True"
 
         ' Create a SqlConnection using the connection string
@@ -61,10 +68,19 @@ Public Class Form1
         'ensure characters are always uppercase
         txt_uname.CharacterCasing = CharacterCasing.Upper
 
+
     End Sub
 
     Private Sub txt_pwd_TextChanged(sender As Object, e As EventArgs) Handles txt_pwd.TextChanged
         'ensure characters are always uppercase
         txt_pwd.CharacterCasing = CharacterCasing.Upper
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        txt_uname.Focus()
+        txt_uname.Select(txt_uname.Text.Length, 0)
+    End Sub
+
+
 End Class

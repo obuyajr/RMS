@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Form1
@@ -15,9 +16,9 @@ Public Class Form1
             Dim cmd As SqlCommand = New SqlCommand(query, con)
 
             ' Set parameter values to prevent SQL injection and improve security
-            cmd.Parameters.AddWithValue("@username", txt_uname.Text)
-            cmd.Parameters.AddWithValue("@password", txt_pwd.Text)
-            cmd.Parameters.AddWithValue("@usertype", combo_utype.SelectedItem)
+            cmd.Parameters.AddWithValue("@username", txt_uname.Text.ToUpper())
+            cmd.Parameters.AddWithValue("@password", txt_pwd.Text.ToUpper())
+            cmd.Parameters.AddWithValue("@usertype", combo_utype.SelectedItem.ToUpper())
 
             ' Create a DataTable to hold the results of the query
             Dim dt As DataTable = New DataTable()
@@ -54,5 +55,16 @@ Public Class Form1
     Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Me.Dispose()
 
+    End Sub
+
+    Private Sub txt_uname_TextChanged(sender As Object, e As EventArgs) Handles txt_uname.TextChanged
+        'ensure characters are always uppercase
+        txt_uname.CharacterCasing = CharacterCasing.Upper
+
+    End Sub
+
+    Private Sub txt_pwd_TextChanged(sender As Object, e As EventArgs) Handles txt_pwd.TextChanged
+        'ensure characters are always uppercase
+        txt_pwd.CharacterCasing = CharacterCasing.Upper
     End Sub
 End Class

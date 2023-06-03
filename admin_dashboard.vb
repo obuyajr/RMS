@@ -22,4 +22,10 @@
         Dim addUsers As New add_users()
         addUsers.Show()
     End Sub
+
+    Private Sub EDITUSERSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EDITUSERSToolStripMenuItem.Click
+        Dim editUsers As New edit_users()
+        editUsers.Show()
+
+    End Sub
 End Class

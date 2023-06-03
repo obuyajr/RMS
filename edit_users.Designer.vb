@@ -30,7 +30,7 @@ Partial Class edit_users
         DataGridView1 = New DataGridView()
         Button1 = New Button()
         Button2 = New Button()
-        Button3 = New Button()
+        btn_close = New Button()
         combo_utype = New ComboBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -82,10 +82,10 @@ Partial Class edit_users
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(23, 44)
+        DataGridView1.Location = New Point(2, 44)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(378, 394)
+        DataGridView1.Size = New Size(529, 394)
         DataGridView1.TabIndex = 6
         ' 
         ' Button1
@@ -110,20 +110,20 @@ Partial Class edit_users
         Button2.Text = "DELETE"
         Button2.UseVisualStyleBackColor = False
         ' 
-        ' Button3
+        ' btn_close
         ' 
-        Button3.Location = New Point(713, 415)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(75, 23)
-        Button3.TabIndex = 9
-        Button3.Text = "CLOSE"
-        Button3.UseVisualStyleBackColor = True
+        btn_close.Location = New Point(713, 415)
+        btn_close.Name = "btn_close"
+        btn_close.Size = New Size(75, 23)
+        btn_close.TabIndex = 9
+        btn_close.Text = "CLOSE"
+        btn_close.UseVisualStyleBackColor = True
         ' 
         ' combo_utype
         ' 
         combo_utype.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         combo_utype.FormattingEnabled = True
-        combo_utype.Items.AddRange(New Object() {"ADMIN", "USERS"})
+        combo_utype.Items.AddRange(New Object() {"ADMIN", "USER"})
         combo_utype.Location = New Point(630, 162)
         combo_utype.Name = "combo_utype"
         combo_utype.Size = New Size(100, 23)
@@ -136,7 +136,7 @@ Partial Class edit_users
         BackColor = Color.Bisque
         ClientSize = New Size(800, 450)
         Controls.Add(combo_utype)
-        Controls.Add(Button3)
+        Controls.Add(btn_close)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(DataGridView1)
@@ -160,6 +160,6 @@ Partial Class edit_users
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btn_close As Button
     Friend WithEvents combo_utype As ComboBox
 End Class

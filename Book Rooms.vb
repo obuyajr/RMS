@@ -113,12 +113,16 @@ Public Class Book_Rooms
             txt_guestName.Text = ""
             txt_phoneNo.Text = ""
             txt_total.Text = ""
+            txt_roomStatus.Text = ""
+            checkin_date.Value = DateTime.Now
+            checkout_date.Value = DateTime.Now
         Else
             ' No room is selected, display an error message
             MessageBox.Show("Please select a room to book.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
+    'when checkout date is changed calculate the total
     Private Sub checkout_date_ValueChanged(sender As Object, e As EventArgs) Handles checkout_date.ValueChanged
         ' Calculate the number of days
         Dim checkinDate As Date = DateTime.Parse(checkin_date.Value)

@@ -22,6 +22,7 @@ Partial Class Book_Rooms
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         btn_book = New Button()
         Label1 = New Label()
         Label2 = New Label()
@@ -45,6 +46,7 @@ Partial Class Book_Rooms
         roomType = New TextBox()
         txt_roomStatus = New TextBox()
         Label9 = New Label()
+        Timer1 = New Timer(components)
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         StatusStrip1.SuspendLayout()
         SuspendLayout()
@@ -238,6 +240,9 @@ Partial Class Book_Rooms
         Label9.TabIndex = 21
         Label9.Text = "Room Status"
         ' 
+        ' Timer1
+        ' 
+        ' 
         ' Book_Rooms
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -297,4 +302,5 @@ Partial Class Book_Rooms
     Friend WithEvents roomType As TextBox
     Friend WithEvents txt_roomStatus As TextBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents Timer1 As Timer
 End Class

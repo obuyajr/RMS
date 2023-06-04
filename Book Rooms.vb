@@ -106,6 +106,14 @@ Public Class Book_Rooms
             ' Show a message to indicate the successful booking
             MessageBox.Show("Room booked successfully!", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+
+
+
+
+            '
+            'RELOAD THE TABLE
+            UpdateGrid()
+            '
             ' Clear the selected room details
             txt_roomNo.Text = ""
             roomType.Text = ""
@@ -114,8 +122,11 @@ Public Class Book_Rooms
             txt_phoneNo.Text = ""
             txt_total.Text = ""
             txt_roomStatus.Text = ""
-            checkin_date.Value = DateTime.Now
-            checkout_date.Value = DateTime.Now
+            'checkin_date.Value = DateTime.Now
+            ' checkout_date.Value = DateTime.Now
+            'RELOAD THE TABLE
+            UpdateGrid()
+            '
         Else
             ' No room is selected, display an error message
             MessageBox.Show("Please select a room to book.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -136,4 +147,24 @@ Public Class Book_Rooms
         ' Update the txt_total TextBox with the calculated total
         txt_total.Text = totalAmount.ToString()
     End Sub
+
+    'reload grid
+    Private Sub UpdateGrid()
+        ' Assuming you have a DataGridView control named dgv_rooms
+
+        ' Clear the existing data in the grid
+        DataGridView1.Rows.Clear()
+
+        ' Retrieve updated data from the database and populate the grid
+        cmd = con.CreateCommand()
+        cmd.CommandText = "SELECT * FROM rooms WHERE room_status = 'UNBOOKED'"
+        Dim reader As SqlDataReader = cmd.ExecuteReader()
+        While reader.Read()
+            DataGridView1.Rows.Add(reader("Room_no"), reader("Room_type"), reader("Rates"), reader("Room_status"))
+        End While
+        reader.Close()
+    End Sub
+
+
+
 End Class

@@ -8,6 +8,7 @@ Public Class Form1
         ' Check if the username, password, and user type fields are empty
         If String.IsNullOrWhiteSpace(txt_uname.Text) OrElse String.IsNullOrWhiteSpace(txt_pwd.Text) OrElse combo_utype.SelectedItem Is Nothing Then
             MessageBox.Show("Please fill in all fields.", "Incomplete Form", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
             Return
         End If
 
@@ -54,7 +55,13 @@ Public Class Form1
                 Me.Hide()
             Else
                 ' If no rows are returned, display an error message
-                MessageBox.Show("Invalid username, password, or user type.")
+
+                MessageBox.Show("Incorrect DETAILS!! .", "WRONG DETAILS", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                ' Clear all fields
+                txt_uname.Text = ""
+                txt_pwd.Text = ""
+                combo_utype.SelectedItem = Nothing
             End If
         End Using
     End Sub

@@ -63,6 +63,17 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property bible_fruit_raintree_guest_house_farm_logo_png_favpng_zuW9wMJ6hLnUaF588GnAvbraX_t() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bible-fruit-raintree-guest-house-farm-logo-png-favpng-zuW9wMJ6hLnUaF588GnAvbraX_t"& _ 
+                        "", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property book_open_regular_24() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("book-open-regular-24", resourceCulture)
@@ -86,6 +97,26 @@ Namespace My.Resources
         Friend ReadOnly Property book_regular_48() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("book-regular-48", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property building_house_solid_72() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("building-house-solid-72", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property building_house_solid_72___Copy() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("building-house-solid-72 - Copy", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -186,6 +217,26 @@ Namespace My.Resources
         Friend ReadOnly Property edit_alt_regular_24() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("edit-alt-regular-24", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property greenhouse_computer_icons_clip_art_png_favpng_QK6bsSqq5fDDdT9dSaNm1GVhq_t() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("greenhouse-computer-icons-clip-art-png-favpng-QK6bsSqq5fDDdT9dSaNm1GVhq_t", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property house_clip_art_png_favpng_W8kktU8ejGQNjF24kJDv7tR4B_t() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("house-clip-art-png-favpng-W8kktU8ejGQNjF24kJDv7tR4B_t", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

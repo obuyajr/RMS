@@ -12,7 +12,8 @@ Public Class Book_Rooms
         End If
         con.Open()
 
-        Dim query As String = "SELECT * FROM rooms"
+        Dim query As String = "SELECT * FROM rooms WHERE room_status = 'UNBOOKED'"
+
         Dim adapter As New SqlDataAdapter(query, con)
         Dim dataTable As New DataTable()
         adapter.Fill(dataTable)
@@ -48,69 +49,87 @@ Public Class Book_Rooms
             If selectedRow.Cells("Select").Value Then
                 txt_roomNo.Text = selectedRow.Cells("Room_no").Value.ToString()
                 txt_roomNo.ReadOnly = True
-                'combo_roomType.SelectedItem = selectedRow.Cells("Room_type").Value.ToString()
-
-
                 roomType.Text = selectedRow.Cells("Room_type").Value.ToString()
                 roomType.ReadOnly = True
                 txt_rates.Text = selectedRow.Cells("Rates").Value.ToString()
                 txt_rates.ReadOnly = True
 
+                txt_roomStatus.Text = selectedRow.Cells("Room_status").Value.ToString()
                 ' combo_status.SelectedItem = selectedRow.Cells("Room_status").Value.ToString()
             Else
                 txt_roomNo.Text = ""
                 roomType.Text = ""
                 txt_rates.Text = ""
+                txt_roomStatus.Text = ""
             End If
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_book.Click
         ' Check if a room is selected
         If Not String.IsNullOrEmpty(txt_roomNo.Text) Then
             ' Perform the booking process
             ' ...
 
-            ' Assuming you have a "bookings" table in your database
-            ' Insert a new booking record into the database
-            Dim query As String = "INSERT INTO bookings (room_no, room_type, rates, room_status,
-                                    guest_name,phone_number, checkin_date, checkout_date, total) " &
-                              "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus,
-                                @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total)"
-            Using cmd As New SqlCommand(query, con)
+            ' Update the room status to "Booked" in the rooms table
+            Dim updateQuery As String = "UPDATE rooms SET Room_status = 'BOOKED' WHERE Room_no = @RoomNo"
+            Using updateCmd As New SqlCommand(updateQuery, con)
+                updateCmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
+                updateCmd.ExecuteNonQuery()
+            End Using
 
-                cmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
-                cmd.Parameters.AddWithValue("@RoomType", roomType.Text)
-                cmd.Parameters.AddWithValue("@Rates", Decimal.Parse(txt_rates.Text))
-                cmd.Parameters.AddWithValue("@RoomStatus", "Booked")
-                cmd.Parameters.AddWithValue("@GuestName", txt_guestName.Text)
-                cmd.Parameters.AddWithValue("@PhoneNumber", txt_phoneNo.Text)
-                cmd.Parameters.AddWithValue("@CheckinDate", DateTime.Parse(checkin_date.Value))
-                cmd.Parameters.AddWithValue("@CheckoutDate", DateTime.Parse(checkout_date.Value))
-                cmd.Parameters.AddWithValue("@Total", Decimal.Parse(txt_total.Text))
-                ' cmd.Parameters.AddWithValue("@Rates", txt_rates.Text)
-                cmd.ExecuteNonQuery()
+            ' Calculate the number of days
+            Dim checkinDate As Date = DateTime.Parse(checkin_date.Value)
+            Dim checkoutDate As Date = DateTime.Parse(checkout_date.Value)
+            Dim totalDays As Integer = (checkoutDate - checkinDate).Days
+
+            ' Calculate the total amount
+            Dim rates As Decimal = Decimal.Parse(txt_rates.Text)
+            Dim totalAmount As Decimal = totalDays * rates
+
+            ' Insert a new booking record into the bookings table
+            Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total) " &
+                                        "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total)"
+            Using insertCmd As New SqlCommand(insertQuery, con)
+                insertCmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
+                insertCmd.Parameters.AddWithValue("@RoomType", roomType.Text)
+                insertCmd.Parameters.AddWithValue("@Rates", rates)
+                insertCmd.Parameters.AddWithValue("@RoomStatus", "Booked")
+                insertCmd.Parameters.AddWithValue("@GuestName", txt_guestName.Text)
+                insertCmd.Parameters.AddWithValue("@PhoneNumber", txt_phoneNo.Text)
+                insertCmd.Parameters.AddWithValue("@CheckinDate", checkinDate)
+                insertCmd.Parameters.AddWithValue("@CheckoutDate", checkoutDate)
+                insertCmd.Parameters.AddWithValue("@Total", totalAmount)
+                insertCmd.ExecuteNonQuery()
             End Using
 
             ' Show a message to indicate the successful booking
             MessageBox.Show("Room booked successfully!", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
-
             ' Clear the selected room details
             txt_roomNo.Text = ""
             roomType.Text = ""
             txt_rates.Text = ""
+            txt_guestName.Text = ""
+            txt_phoneNo.Text = ""
+            txt_total.Text = ""
         Else
             ' No room is selected, display an error message
             MessageBox.Show("Please select a room to book.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
-
-
-
-
-
-
     End Sub
 
+    Private Sub checkout_date_ValueChanged(sender As Object, e As EventArgs) Handles checkout_date.ValueChanged
+        ' Calculate the number of days
+        Dim checkinDate As Date = DateTime.Parse(checkin_date.Value)
+        Dim checkoutDate As Date = DateTime.Parse(checkout_date.Value)
+        Dim totalDays As Integer = (checkoutDate - checkinDate).Days
+
+        ' Calculate the total amount
+        Dim rates As Decimal = Decimal.Parse(txt_rates.Text)
+        Dim totalAmount As Decimal = totalDays * rates
+
+        ' Update the txt_total TextBox with the calculated total
+        txt_total.Text = totalAmount.ToString()
+    End Sub
 End Class

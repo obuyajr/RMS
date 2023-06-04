@@ -30,6 +30,7 @@ Partial Class Form1
         Label3 = New Label()
         txt_uname = New TextBox()
         txt_pwd = New TextBox()
+        Label4 = New Label()
         SuspendLayout()
         ' 
         ' btn_login
@@ -37,7 +38,7 @@ Partial Class Form1
         btn_login.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_login.Image = My.Resources.Resources.chevrons_right_regular_24
         btn_login.ImageAlign = ContentAlignment.MiddleRight
-        btn_login.Location = New Point(103, 187)
+        btn_login.Location = New Point(35, 289)
         btn_login.Name = "btn_login"
         btn_login.Size = New Size(78, 34)
         btn_login.TabIndex = 0
@@ -50,7 +51,7 @@ Partial Class Form1
         btn_close.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_close.Image = My.Resources.Resources.close
         btn_close.ImageAlign = ContentAlignment.MiddleRight
-        btn_close.Location = New Point(484, 187)
+        btn_close.Location = New Point(270, 289)
         btn_close.Name = "btn_close"
         btn_close.Size = New Size(79, 34)
         btn_close.TabIndex = 1
@@ -62,7 +63,7 @@ Partial Class Form1
         ' 
         combo_utype.FormattingEnabled = True
         combo_utype.Items.AddRange(New Object() {"ADMIN", "USER"})
-        combo_utype.Location = New Point(217, 125)
+        combo_utype.Location = New Point(146, 221)
         combo_utype.Name = "combo_utype"
         combo_utype.Size = New Size(121, 23)
         combo_utype.TabIndex = 2
@@ -70,8 +71,9 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.White
         Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(118, 46)
+        Label1.Location = New Point(40, 117)
         Label1.Name = "Label1"
         Label1.Size = New Size(71, 15)
         Label1.TabIndex = 3
@@ -80,8 +82,9 @@ Partial Class Form1
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.White
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(116, 86)
+        Label2.Location = New Point(40, 179)
         Label2.Name = "Label2"
         Label2.Size = New Size(73, 15)
         Label2.TabIndex = 4
@@ -90,8 +93,9 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.White
         Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(125, 128)
+        Label3.Location = New Point(49, 224)
         Label3.Name = "Label3"
         Label3.Size = New Size(64, 15)
         Label3.TabIndex = 5
@@ -99,23 +103,37 @@ Partial Class Form1
         ' 
         ' txt_uname
         ' 
-        txt_uname.Location = New Point(217, 43)
+        txt_uname.Location = New Point(146, 114)
         txt_uname.Name = "txt_uname"
         txt_uname.Size = New Size(196, 23)
         txt_uname.TabIndex = 6
         ' 
         ' txt_pwd
         ' 
-        txt_pwd.Location = New Point(217, 83)
+        txt_pwd.Location = New Point(146, 176)
         txt_pwd.Name = "txt_pwd"
         txt_pwd.Size = New Size(196, 23)
         txt_pwd.TabIndex = 7
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.White
+        Label4.Font = New Font("Gabriola", 36F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.Location = New Point(105, 9)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(359, 88)
+        Label4.TabIndex = 8
+        Label4.Text = "HAPPY CHOICE GH"
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(661, 253)
+        BackColor = Color.Gray
+        BackgroundImage = My.Resources.Resources.building_house_solid_72___Copy
+        ClientSize = New Size(551, 344)
+        Controls.Add(Label4)
         Controls.Add(txt_pwd)
         Controls.Add(txt_uname)
         Controls.Add(Label3)
@@ -125,7 +143,8 @@ Partial Class Form1
         Controls.Add(btn_close)
         Controls.Add(btn_login)
         Name = "Form1"
-        Text = "Form1"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "HAPPY CHOICE LTD"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -138,4 +157,5 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents txt_uname As TextBox
     Friend WithEvents txt_pwd As TextBox
+    Friend WithEvents Label4 As Label
 End Class

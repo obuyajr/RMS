@@ -1,9 +1,12 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Collections.ObjectModel
+Imports System.Data.SqlClient
 
 Public Class Booking_reports_table
     Dim con As New SqlConnection
     Dim cmd As New SqlCommand
 
+
+    Private ReadOnly _bookings As ObservableCollection(Of String)
 
 
     Private Sub Booking_reports_table_Load(sender As Object, e As EventArgs) Handles MyBase.Load

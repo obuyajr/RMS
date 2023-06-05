@@ -91,8 +91,8 @@ Public Class Book_Rooms
             Dim totalAmount As Decimal = totalDays * rates
 
             ' Insert a new booking record into the bookings table
-            Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total,teller_name) " &
-                                        "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total, @TellerName)"
+            Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total, teller_name, time_stamP) " &
+                            "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total, @TellerName, GETDATE())"
             Using insertCmd As New SqlCommand(insertQuery, con)
                 insertCmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
                 insertCmd.Parameters.AddWithValue("@RoomType", roomType.Text)

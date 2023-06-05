@@ -24,8 +24,6 @@ Partial Class Booking_reports
     Private Sub InitializeComponent()
         btn_close = New Button()
         btn_generate = New Button()
-        ComboBox1 = New ComboBox()
-        Label3 = New Label()
         DateTimePicker2 = New DateTimePicker()
         DateTimePicker1 = New DateTimePicker()
         Label2 = New Label()
@@ -34,7 +32,7 @@ Partial Class Booking_reports
         ' 
         ' btn_close
         ' 
-        btn_close.Location = New Point(406, 212)
+        btn_close.Location = New Point(247, 191)
         btn_close.Name = "btn_close"
         btn_close.Size = New Size(75, 23)
         btn_close.TabIndex = 15
@@ -43,29 +41,12 @@ Partial Class Booking_reports
         ' 
         ' btn_generate
         ' 
-        btn_generate.Location = New Point(122, 212)
+        btn_generate.Location = New Point(79, 191)
         btn_generate.Name = "btn_generate"
         btn_generate.Size = New Size(75, 23)
         btn_generate.TabIndex = 14
         btn_generate.Text = "GENERATE"
         btn_generate.UseVisualStyleBackColor = True
-        ' 
-        ' ComboBox1
-        ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(122, 140)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(148, 23)
-        ComboBox1.TabIndex = 13
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(35, 143)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(81, 15)
-        Label3.TabIndex = 12
-        Label3.Text = "TELLER NAME"
         ' 
         ' DateTimePicker2
         ' 
@@ -103,11 +84,9 @@ Partial Class Booking_reports
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(516, 267)
+        ClientSize = New Size(392, 239)
         Controls.Add(btn_close)
         Controls.Add(btn_generate)
-        Controls.Add(ComboBox1)
-        Controls.Add(Label3)
         Controls.Add(DateTimePicker2)
         Controls.Add(DateTimePicker1)
         Controls.Add(Label2)
@@ -120,8 +99,6 @@ Partial Class Booking_reports
 
     Friend WithEvents btn_close As Button
     Friend WithEvents btn_generate As Button
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label2 As Label

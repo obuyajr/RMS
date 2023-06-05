@@ -19,27 +19,13 @@ Public Class Booking_reports
         con.Open()
 
 
-        Dim query As String = "SELECT username FROM user_login" ' Replace YourTable with the actual table name
 
 
-        Using command As New SqlCommand(query, con)
-            Try
+    End Sub
 
-                Dim reader As SqlDataReader = command.ExecuteReader()
-
-                While reader.Read()
-                    Dim username As String = reader("username").ToString()
-                    ComboBox1.Items.Add(username) ' Replace ComboBox1 with the name of your ComboBox control
-                End While
-
-                reader.Close()
-            Catch ex As Exception
-                ' Handle any exceptions
-                MessageBox.Show("Error: " & ex.Message)
-            Finally
-
-            End Try
-        End Using
+    Private Sub btn_generate_Click(sender As Object, e As EventArgs) Handles btn_generate.Click
+        Dim bookreportTable As New Booking_reports_table()
+        bookreportTable.Show()
 
     End Sub
 

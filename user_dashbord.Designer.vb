@@ -25,9 +25,9 @@ Partial Class user_dashbord
         btn_logout = New Button()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        ToolStripStatusLabel2 = New ToolStripStatusLabel()
         Panel1 = New Panel()
         btn_bookRoom = New Button()
-        ToolStripStatusLabel2 = New ToolStripStatusLabel()
         StatusStrip1.SuspendLayout()
         Panel1.SuspendLayout()
         SuspendLayout()
@@ -60,6 +60,12 @@ Partial Class user_dashbord
         ToolStripStatusLabel1.Size = New Size(77, 17)
         ToolStripStatusLabel1.Text = "Logged in as:"
         ' 
+        ' ToolStripStatusLabel2
+        ' 
+        ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        ToolStripStatusLabel2.Size = New Size(119, 17)
+        ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
+        ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.IndianRed
@@ -82,12 +88,6 @@ Partial Class user_dashbord
         btn_bookRoom.Text = "Book Room"
         btn_bookRoom.TextAlign = ContentAlignment.BottomCenter
         btn_bookRoom.UseVisualStyleBackColor = True
-        ' 
-        ' ToolStripStatusLabel2
-        ' 
-        ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        ToolStripStatusLabel2.Size = New Size(119, 17)
-        ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
         ' 
         ' user_dashbord
         ' 

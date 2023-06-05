@@ -30,3 +30,6 @@ C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.edit_roo
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.Book_Rooms.resources
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.add_users.resources
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.edit_users.resources
+C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.Booking_reports.resources
+C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.Booking_reports_table.resources
+C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.Teller_var_table.resources

@@ -10,4 +10,8 @@
         bookies.Show()
 
     End Sub
+
+    Private Sub user_dashbord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ToolStripStatusLabel2.Text = Form1.txt_uname.Text
+    End Sub
 End Class

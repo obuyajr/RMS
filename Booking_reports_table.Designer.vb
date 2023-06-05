@@ -29,20 +29,23 @@ Partial Class Booking_reports_table
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(75, 33)
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.Location = New Point(0, 0)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(655, 405)
+        DataGridView1.Size = New Size(670, 374)
         DataGridView1.TabIndex = 0
         ' 
         ' Booking_reports_table
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(670, 374)
         Controls.Add(DataGridView1)
         Name = "Booking_reports_table"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Booking_reports_table"
+        WindowState = FormWindowState.Maximized
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub

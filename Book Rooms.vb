@@ -26,6 +26,9 @@ Public Class Book_Rooms
 
         ' Assign the DataTable as the DataGridView's data source
         DataGridView1.DataSource = dataTable
+
+        teller__name.Text = Form1.txt_uname.Text
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -88,8 +91,8 @@ Public Class Book_Rooms
             Dim totalAmount As Decimal = totalDays * rates
 
             ' Insert a new booking record into the bookings table
-            Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total) " &
-                                        "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total)"
+            Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total,teller_name) " &
+                                        "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total, @TellerName)"
             Using insertCmd As New SqlCommand(insertQuery, con)
                 insertCmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
                 insertCmd.Parameters.AddWithValue("@RoomType", roomType.Text)
@@ -100,6 +103,7 @@ Public Class Book_Rooms
                 insertCmd.Parameters.AddWithValue("@CheckinDate", checkinDate)
                 insertCmd.Parameters.AddWithValue("@CheckoutDate", checkoutDate)
                 insertCmd.Parameters.AddWithValue("@Total", totalAmount)
+                insertCmd.Parameters.AddWithValue("@TellerName", teller__name.Text)
                 insertCmd.ExecuteNonQuery()
             End Using
 
@@ -165,6 +169,7 @@ Public Class Book_Rooms
         reader.Close()
     End Sub
 
+    Private Sub StatusStrip2_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs)
 
-
+    End Sub
 End Class

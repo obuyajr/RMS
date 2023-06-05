@@ -43,6 +43,7 @@ Partial Class Book_Rooms
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
         ToolStripStatusLabel2 = New ToolStripStatusLabel()
+        teller__name = New ToolStripStatusLabel()
         roomType = New TextBox()
         txt_roomStatus = New TextBox()
         Label9 = New Label()
@@ -85,7 +86,7 @@ Partial Class Book_Rooms
         DataGridView1.Location = New Point(9, 12)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(429, 426)
+        DataGridView1.Size = New Size(480, 426)
         DataGridView1.TabIndex = 3
         ' 
         ' Label3
@@ -198,7 +199,7 @@ Partial Class Book_Rooms
         ' 
         ' StatusStrip1
         ' 
-        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2})
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2, teller__name})
         StatusStrip1.Location = New Point(0, 512)
         StatusStrip1.Name = "StatusStrip1"
         StatusStrip1.Size = New Size(878, 22)
@@ -216,6 +217,12 @@ Partial Class Book_Rooms
         ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
         ToolStripStatusLabel2.Size = New Size(88, 17)
         ToolStripStatusLabel2.Text = "Loogged in as :"
+        ' 
+        ' teller__name
+        ' 
+        teller__name.Name = "teller__name"
+        teller__name.Size = New Size(119, 17)
+        teller__name.Text = "ToolStripStatusLabel3"
         ' 
         ' roomType
         ' 
@@ -239,9 +246,6 @@ Partial Class Book_Rooms
         Label9.Size = New Size(74, 15)
         Label9.TabIndex = 21
         Label9.Text = "Room Status"
-        ' 
-        ' Timer1
-        ' 
         ' 
         ' Book_Rooms
         ' 
@@ -303,4 +307,5 @@ Partial Class Book_Rooms
     Friend WithEvents txt_roomStatus As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents teller__name As ToolStripStatusLabel
 End Class

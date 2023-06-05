@@ -27,6 +27,7 @@ Partial Class user_dashbord
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
         ToolStripStatusLabel2 = New ToolStripStatusLabel()
         Panel1 = New Panel()
+        btn_checkout = New Button()
         btn_bookRoom = New Button()
         StatusStrip1.SuspendLayout()
         Panel1.SuspendLayout()
@@ -69,12 +70,26 @@ Partial Class user_dashbord
         ' Panel1
         ' 
         Panel1.BackColor = Color.IndianRed
+        Panel1.Controls.Add(btn_checkout)
         Panel1.Controls.Add(btn_bookRoom)
         Panel1.Controls.Add(btn_logout)
         Panel1.Location = New Point(0, 1)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(800, 91)
         Panel1.TabIndex = 2
+        ' 
+        ' btn_checkout
+        ' 
+        btn_checkout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_checkout.Image = My.Resources.Resources.log_out_regular_48
+        btn_checkout.ImageAlign = ContentAlignment.TopCenter
+        btn_checkout.Location = New Point(309, 3)
+        btn_checkout.Name = "btn_checkout"
+        btn_checkout.Size = New Size(102, 70)
+        btn_checkout.TabIndex = 1
+        btn_checkout.Text = "Check Out"
+        btn_checkout.TextAlign = ContentAlignment.BottomCenter
+        btn_checkout.UseVisualStyleBackColor = True
         ' 
         ' btn_bookRoom
         ' 
@@ -111,4 +126,5 @@ Partial Class user_dashbord
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btn_bookRoom As Button
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents btn_checkout As Button
 End Class

@@ -6,34 +6,24 @@ Public Class Book_Rooms
     Dim cmd As New SqlCommand
 
     Private Sub Book_Rooms_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Set the database connection string
         con.ConnectionString = "Data Source=DESKTOP-KCVKSCU\DESKTOPKCVKSCU;Initial Catalog=vb_login;Integrated Security=True"
+
+        ' Open the database connection
         If con.State = ConnectionState.Open Then
             con.Close()
         End If
         con.Open()
 
-        Dim query As String = "SELECT * FROM rooms WHERE room_status = 'UNBOOKED'"
+        ' Update the DataGridView with the available rooms
+        UpdateGrid()
 
-        Dim adapter As New SqlDataAdapter(query, con)
-        Dim dataTable As New DataTable()
-        adapter.Fill(dataTable)
-
-        ' Add the checkbox column to the DataGridView
-        Dim checkBoxColumn As New DataGridViewCheckBoxColumn()
-        checkBoxColumn.Name = "Select"
-        checkBoxColumn.HeaderText = "Select"
-        DataGridView1.Columns.Add(checkBoxColumn)
-
-        ' Assign the DataTable as the DataGridView's data source
-        DataGridView1.DataSource = dataTable
-
-        teller__name.Text = Form1.txt_uname.Text
-
+        ' Set the username in the status strip
+        ToolStripStatusLabel3.Text = Form1.txt_uname.Text
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        'display on textbox and comboBox if clicked
-        ' Check if the checkbox column is clicked
+        ' Handle the click event in the DataGridView cells
         If e.ColumnIndex = DataGridView1.Columns("Select").Index AndAlso e.RowIndex >= 0 Then
             ' Uncheck all other checkboxes
             For Each row As DataGridViewRow In DataGridView1.Rows
@@ -47,8 +37,7 @@ Public Class Book_Rooms
             Dim isSelected As Boolean = Convert.ToBoolean(selectedRow.Cells("Select").Value)
             selectedRow.Cells("Select").Value = Not isSelected
 
-            ' Assuming your textboxes are named txt_roomNo, txt_roomType, and combo_roomType
-            'display from grid to textb 
+            ' Update the room details text boxes if a room is selected
             If selectedRow.Cells("Select").Value Then
                 txt_roomNo.Text = selectedRow.Cells("Room_no").Value.ToString()
                 txt_roomNo.ReadOnly = True
@@ -58,8 +47,8 @@ Public Class Book_Rooms
                 txt_rates.ReadOnly = True
 
                 txt_roomStatus.Text = selectedRow.Cells("Room_status").Value.ToString()
-                ' combo_status.SelectedItem = selectedRow.Cells("Room_status").Value.ToString()
             Else
+                ' Clear the room details text boxes if no room is selected
                 txt_roomNo.Text = ""
                 roomType.Text = ""
                 txt_rates.Text = ""
@@ -68,13 +57,10 @@ Public Class Book_Rooms
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_book.Click
-        ' Check if a room is selected
+    Private Sub btn_book_Click(sender As Object, e As EventArgs) Handles btn_book.Click
+        ' Check if a room is selected for booking
         If Not String.IsNullOrEmpty(txt_roomNo.Text) Then
-            ' Perform the booking process
-            ' ...
-
-            ' Update the room status to "Booked" in the rooms table
+            ' Update the room status to "BOOKED" in the rooms table
             Dim updateQuery As String = "UPDATE rooms SET Room_status = 'BOOKED' WHERE Room_no = @RoomNo"
             Using updateCmd As New SqlCommand(updateQuery, con)
                 updateCmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
@@ -91,8 +77,8 @@ Public Class Book_Rooms
             Dim totalAmount As Decimal = totalDays * rates
 
             ' Insert a new booking record into the bookings table
-            Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total, teller_name, time_stamP) " &
-                            "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total, @TellerName, GETDATE())"
+            Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total, teller_name, time_stamp) " &
+                        "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total, @TellerName, GETDATE())"
             Using insertCmd As New SqlCommand(insertQuery, con)
                 insertCmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
                 insertCmd.Parameters.AddWithValue("@RoomType", roomType.Text)
@@ -103,22 +89,14 @@ Public Class Book_Rooms
                 insertCmd.Parameters.AddWithValue("@CheckinDate", checkinDate)
                 insertCmd.Parameters.AddWithValue("@CheckoutDate", checkoutDate)
                 insertCmd.Parameters.AddWithValue("@Total", totalAmount)
-                insertCmd.Parameters.AddWithValue("@TellerName", teller__name.Text)
+                insertCmd.Parameters.AddWithValue("@TellerName", ToolStripStatusLabel3.Text)
                 insertCmd.ExecuteNonQuery()
             End Using
 
-            ' Show a message to indicate the successful booking
+            ' Show a success message for the booking
             MessageBox.Show("Room booked successfully!", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
-
-
-
-            '
-            'RELOAD THE TABLE
-            UpdateGrid()
-            '
-            ' Clear the selected room details
+            ' Clear the input fields and update the grid
             txt_roomNo.Text = ""
             roomType.Text = ""
             txt_rates.Text = ""
@@ -126,18 +104,13 @@ Public Class Book_Rooms
             txt_phoneNo.Text = ""
             txt_total.Text = ""
             txt_roomStatus.Text = ""
-            'checkin_date.Value = DateTime.Now
-            ' checkout_date.Value = DateTime.Now
-            'RELOAD THE TABLE
             UpdateGrid()
-            '
         Else
-            ' No room is selected, display an error message
+            ' Display an error message if no room is selected
             MessageBox.Show("Please select a room to book.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
-    'when checkout date is changed calculate the total
     Private Sub checkout_date_ValueChanged(sender As Object, e As EventArgs) Handles checkout_date.ValueChanged
         ' Calculate the number of days
         Dim checkinDate As Date = DateTime.Parse(checkin_date.Value)
@@ -148,25 +121,44 @@ Public Class Book_Rooms
         Dim rates As Decimal = Decimal.Parse(txt_rates.Text)
         Dim totalAmount As Decimal = totalDays * rates
 
-        ' Update the txt_total TextBox with the calculated total
+        ' Update the total amount text box
         txt_total.Text = totalAmount.ToString()
     End Sub
 
-    'reload grid
     Private Sub UpdateGrid()
-        ' Assuming you have a DataGridView control named dgv_rooms
-
         ' Clear the existing data in the grid
         DataGridView1.Rows.Clear()
+        DataGridView1.Columns.Clear()
 
         ' Retrieve updated data from the database and populate the grid
-        cmd = con.CreateCommand()
-        cmd.CommandText = "SELECT * FROM rooms WHERE room_status = 'UNBOOKED'"
-        Dim reader As SqlDataReader = cmd.ExecuteReader()
-        While reader.Read()
-            DataGridView1.Rows.Add(reader("Room_no"), reader("Room_type"), reader("Rates"), reader("Room_status"))
-        End While
-        reader.Close()
+        Dim query As String = "SELECT * FROM rooms WHERE Room_status = 'UNBOOKED'"
+
+        Using adapter As New SqlDataAdapter(query, con)
+            Dim dataTable As New DataTable()
+            adapter.Fill(dataTable)
+
+            ' Add the checkbox column to the DataGridView
+            Dim checkBoxColumn As New DataGridViewCheckBoxColumn()
+            checkBoxColumn.Name = "Select"
+            checkBoxColumn.HeaderText = "Select"
+            DataGridView1.Columns.Add(checkBoxColumn)
+
+            ' Add the remaining columns to the DataGridView
+            DataGridView1.Columns.Add("Room_no", "Room Number")
+            DataGridView1.Columns.Add("Room_type", "Room Type")
+            DataGridView1.Columns.Add("Rates", "Rates")
+            DataGridView1.Columns.Add("Room_status", "Room Status")
+
+            ' Populate the grid with the retrieved data
+            For Each row As DataRow In dataTable.Rows
+                Dim roomNo As String = row("Room_no").ToString()
+                Dim roomType As String = row("Room_type").ToString()
+                Dim rates As String = row("Rates").ToString()
+                Dim roomStatus As String = row("Room_status").ToString()
+
+                DataGridView1.Rows.Add(False, roomNo, roomType, rates, roomStatus)
+            Next
+        End Using
     End Sub
 
     Private Sub StatusStrip2_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs)

@@ -14,4 +14,10 @@
     Private Sub user_dashbord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ToolStripStatusLabel2.Text = Form1.txt_uname.Text
     End Sub
+
+    Private Sub btn_checkout_Click(sender As Object, e As EventArgs) Handles btn_checkout.Click
+        Dim checkOut As New check_out()
+        checkOut.Show()
+
+    End Sub
 End Class

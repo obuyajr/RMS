@@ -28,11 +28,15 @@ Partial Class Booking_reports
         DateTimePicker1 = New DateTimePicker()
         Label2 = New Label()
         Label1 = New Label()
+        Label3 = New Label()
+        ComboBox1 = New ComboBox()
+        DataGridView1 = New DataGridView()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' btn_close
         ' 
-        btn_close.Location = New Point(247, 191)
+        btn_close.Location = New Point(742, 453)
         btn_close.Name = "btn_close"
         btn_close.Size = New Size(75, 23)
         btn_close.TabIndex = 15
@@ -41,23 +45,24 @@ Partial Class Booking_reports
         ' 
         ' btn_generate
         ' 
-        btn_generate.Location = New Point(79, 191)
+        btn_generate.BackColor = Color.IndianRed
+        btn_generate.Location = New Point(742, 8)
         btn_generate.Name = "btn_generate"
-        btn_generate.Size = New Size(75, 23)
+        btn_generate.Size = New Size(104, 40)
         btn_generate.TabIndex = 14
         btn_generate.Text = "GENERATE"
-        btn_generate.UseVisualStyleBackColor = True
+        btn_generate.UseVisualStyleBackColor = False
         ' 
         ' DateTimePicker2
         ' 
-        DateTimePicker2.Location = New Point(122, 85)
+        DateTimePicker2.Location = New Point(518, 15)
         DateTimePicker2.Name = "DateTimePicker2"
         DateTimePicker2.Size = New Size(200, 23)
         DateTimePicker2.TabIndex = 11
         ' 
         ' DateTimePicker1
         ' 
-        DateTimePicker1.Location = New Point(122, 32)
+        DateTimePicker1.Location = New Point(279, 15)
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(200, 23)
         DateTimePicker1.TabIndex = 10
@@ -65,26 +70,58 @@ Partial Class Booking_reports
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(56, 91)
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(494, 21)
         Label2.Name = "Label2"
-        Label2.Size = New Size(60, 15)
+        Label2.Size = New Size(23, 15)
         Label2.TabIndex = 9
-        Label2.Text = "END DATE"
+        Label2.Text = "TO"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(48, 38)
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(232, 21)
         Label1.Name = "Label1"
-        Label1.Size = New Size(68, 15)
+        Label1.Size = New Size(41, 15)
         Label1.TabIndex = 8
-        Label1.Text = "START DATE"
+        Label1.Text = "FROM"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.Location = New Point(12, 21)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(71, 15)
+        Label3.TabIndex = 16
+        Label3.Text = "USERNAME"
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(89, 15)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(121, 23)
+        ComboBox1.TabIndex = 17
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(12, 67)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowTemplate.Height = 25
+        DataGridView1.Size = New Size(805, 355)
+        DataGridView1.TabIndex = 18
         ' 
         ' Booking_reports
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(392, 239)
+        ClientSize = New Size(871, 488)
+        Controls.Add(DataGridView1)
+        Controls.Add(ComboBox1)
+        Controls.Add(Label3)
         Controls.Add(btn_close)
         Controls.Add(btn_generate)
         Controls.Add(DateTimePicker2)
@@ -93,6 +130,7 @@ Partial Class Booking_reports
         Controls.Add(Label1)
         Name = "Booking_reports"
         Text = "Booking_reports"
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -103,4 +141,7 @@ Partial Class Booking_reports
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

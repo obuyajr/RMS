@@ -19,9 +19,6 @@
     <Compile Update="Booking_reports.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Booking_reports_table.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="check_out.vb">
       <SubType>Form</SubType>
     </Compile>

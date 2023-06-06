@@ -101,13 +101,13 @@ Partial Class admin_dashboard
         ' BookingReportsToolStripMenuItem
         ' 
         BookingReportsToolStripMenuItem.Name = "BookingReportsToolStripMenuItem"
-        BookingReportsToolStripMenuItem.Size = New Size(180, 22)
+        BookingReportsToolStripMenuItem.Size = New Size(161, 22)
         BookingReportsToolStripMenuItem.Text = "Booking Reports"
         ' 
         ' TellerRepoortsToolStripMenuItem
         ' 
         TellerRepoortsToolStripMenuItem.Name = "TellerRepoortsToolStripMenuItem"
-        TellerRepoortsToolStripMenuItem.Size = New Size(180, 22)
+        TellerRepoortsToolStripMenuItem.Size = New Size(161, 22)
         TellerRepoortsToolStripMenuItem.Text = "Teller Repoorts"
         ' 
         ' BACKUPToolStripMenuItem
@@ -120,7 +120,7 @@ Partial Class admin_dashboard
         ' ToEMAILToolStripMenuItem
         ' 
         ToEMAILToolStripMenuItem.Name = "ToEMAILToolStripMenuItem"
-        ToEMAILToolStripMenuItem.Size = New Size(180, 22)
+        ToEMAILToolStripMenuItem.Size = New Size(123, 22)
         ToEMAILToolStripMenuItem.Text = "To EMAIL"
         ' 
         ' StatusStrip1
@@ -174,8 +174,11 @@ Partial Class admin_dashboard
         Controls.Add(Panel1)
         Controls.Add(StatusStrip1)
         Controls.Add(MenuStrip1)
+        IsMdiContainer = True
         MainMenuStrip = MenuStrip1
+        MdiChildrenMinimizedAnchorBottom = False
         Name = "admin_dashboard"
+        StartPosition = FormStartPosition.WindowsDefaultBounds
         Text = "admin_dashboard"
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()

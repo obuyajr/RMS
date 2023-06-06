@@ -96,6 +96,17 @@ Public Class Book_Rooms
             ' Show a success message for the booking
             MessageBox.Show("Room booked successfully!", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+
+
+
+            ' Print Preview
+            Dim printDocument As New PrintDocument()
+            AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
+
+            Dim printPreviewDialog As New PrintPreviewDialog()
+            printPreviewDialog.Document = printDocument
+            printPreviewDialog.ShowDialog()
+            '
             ' Clear the input fields and update the grid
             txt_roomNo.Text = ""
             roomType.Text = ""
@@ -105,12 +116,34 @@ Public Class Book_Rooms
             txt_total.Text = ""
             txt_roomStatus.Text = ""
             UpdateGrid()
-            PrintReceipt()
+
         Else
             ' Display an error message if no room is selected
             MessageBox.Show("Please select a room to book.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+    Private Sub PrintDocument_PrintPage(sender As Object, e As PrintPageEventArgs)
+        ' Define the content to be printed
+        Dim content As String = "Booking Details:" & Environment.NewLine &
+            "Room No: " & txt_roomNo.Text & Environment.NewLine &
+            "Room Type: " & roomType.Text & Environment.NewLine &
+            "Rates: " & txt_rates.Text & Environment.NewLine &
+            "Guest Name: " & txt_guestName.Text & Environment.NewLine &
+            "Phone Number: " & txt_phoneNo.Text & Environment.NewLine &
+            "Check-in Date: " & checkin_date.Value.ToString() & Environment.NewLine &
+            "Checkout Date: " & checkout_date.Value.ToString() & Environment.NewLine &
+            "Total: " & txt_total.Text & Environment.NewLine &
+            "SERVED BY: " & ToolStripStatusLabel3.Text
+
+        ' Define the font and brush for drawing the content
+        Dim font As New Font("Arial", 12)
+        Dim brush As New SolidBrush(Color.Black)
+
+        ' Draw the content on the print page
+        e.Graphics.DrawString(content, font, brush, New PointF(50, 50))
+    End Sub
+
 
     Private Sub checkout_date_ValueChanged(sender As Object, e As EventArgs) Handles checkout_date.ValueChanged
         ' Calculate the number of days
@@ -162,53 +195,6 @@ Public Class Book_Rooms
         End Using
     End Sub
 
-    Private Sub PrintReceipt()
-        ' Create a PrintDocument instance
-        Dim printDocument As New PrintDocument()
 
-        ' Handle the PrintPage event to define the content that will be printed
-        AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
-
-        ' Show the print preview dialog
-        Dim printPreviewDialog As New PrintPreviewDialog()
-        printPreviewDialog.Document = printDocument
-
-        printPreviewDialog.ShowDialog()
-    End Sub
-
-
-    Private Sub PrintDocument_PrintPage(sender As Object, e As PrintPageEventArgs)
-        ' Define the content to be printed here
-        ' You can use the Graphics object (e.Graphics) to draw text, shapes, images, etc.
-
-        ' Example: Print the booking details
-        Dim font As New Font("Arial", 12)
-        Dim startX As Integer = 10
-        Dim startY As Integer = 10
-        Dim lineHeight As Integer = 20
-
-        ' Print the heading
-        e.Graphics.DrawString("Booking Receipt", font, Brushes.Black, startX, startY)
-
-        ' Print the room details
-        startY += lineHeight
-        e.Graphics.DrawString("Room Number: " & txt_roomNo.Text, font, Brushes.Black, startX, startY)
-
-        ' Print the guest details
-        startY += lineHeight
-        e.Graphics.DrawString("Guest Name: " & txt_guestName.Text, font, Brushes.Black, startX, startY)
-        startY += lineHeight
-        e.Graphics.DrawString("Phone Number: " & txt_phoneNo.Text, font, Brushes.Black, startX, startY)
-
-        ' ... (add more content as needed)
-
-        ' Print a horizontal line
-        startY += lineHeight
-        e.Graphics.DrawLine(Pens.Black, startX, startY, e.PageBounds.Width - startX, startY)
-
-        ' Print the footer
-        startY += lineHeight
-        e.Graphics.DrawString("Thank you for choosing our hotel!", font, Brushes.Black, startX, startY)
-    End Sub
 
 End Class

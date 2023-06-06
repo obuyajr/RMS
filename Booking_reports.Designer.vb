@@ -31,6 +31,7 @@ Partial Class Booking_reports
         Label3 = New Label()
         ComboBox1 = New ComboBox()
         DataGridView1 = New DataGridView()
+        lbl_total = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -107,18 +108,30 @@ Partial Class Booking_reports
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(12, 67)
+        DataGridView1.Location = New Point(0, 54)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(805, 355)
+        DataGridView1.Size = New Size(1104, 358)
         DataGridView1.TabIndex = 18
+        ' 
+        ' lbl_total
+        ' 
+        lbl_total.AutoSize = True
+        lbl_total.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point)
+        lbl_total.Location = New Point(93, 434)
+        lbl_total.Name = "lbl_total"
+        lbl_total.Size = New Size(117, 45)
+        lbl_total.TabIndex = 19
+        lbl_total.Text = "TOTAL"
         ' 
         ' Booking_reports
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(871, 488)
+        ClientSize = New Size(1116, 488)
+        Controls.Add(lbl_total)
         Controls.Add(DataGridView1)
         Controls.Add(ComboBox1)
         Controls.Add(Label3)
@@ -130,6 +143,7 @@ Partial Class Booking_reports
         Controls.Add(Label1)
         Name = "Booking_reports"
         Text = "Booking_reports"
+        WindowState = FormWindowState.Maximized
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -144,4 +158,5 @@ Partial Class Booking_reports
     Friend WithEvents Label3 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents lbl_total As Label
 End Class

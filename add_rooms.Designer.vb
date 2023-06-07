@@ -37,6 +37,7 @@ Partial Class add_rooms
         ' 
         ' txt_roomNo
         ' 
+        txt_roomNo.CharacterCasing = CharacterCasing.Upper
         txt_roomNo.Location = New Point(142, 44)
         txt_roomNo.Name = "txt_roomNo"
         txt_roomNo.Size = New Size(121, 23)
@@ -44,6 +45,7 @@ Partial Class add_rooms
         ' 
         ' txt_rates
         ' 
+        txt_rates.CharacterCasing = CharacterCasing.Upper
         txt_rates.Location = New Point(142, 124)
         txt_rates.Name = "txt_rates"
         txt_rates.Size = New Size(100, 23)
@@ -147,7 +149,7 @@ Partial Class add_rooms
         Controls.Add(txt_rates)
         Controls.Add(txt_roomNo)
         Name = "add_rooms"
-        Text = "add_rooms"
+        Text = "ADD ROOMS"
         ResumeLayout(False)
         PerformLayout()
     End Sub

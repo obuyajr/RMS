@@ -90,6 +90,24 @@ Public Class edit_users
                 command.ExecuteNonQuery()
             End Using
 
+            'Dim StrCmd As String = "UPDATE user_login" &
+            '                       " SET username = '" & txt_uname.Text.Trim() & "'" &
+            '                        "   , password = '" & txt_password.Text.Trim() & "'" &
+            '                        "   , usertype ='" & combo_utype.SelectedItem.ToString() & "' " &
+            '                        " WHERE user_id = @user_id"
+
+
+            'cmd = New SqlCommand(StrCmd, con)
+
+            'Try
+            '    MessageBox.Show("USER DETAILS UPDATED SUCCESSFULLY")
+            '    cmd.ExecuteNonQuery()
+            'Catch ex As Exception
+            '    MessageBox.Show(ex.Message)
+            'End Try
+
+            'cmd.Dispose()
+
             ' Refresh the DataGridView to reflect the change
             RefreshDataGridView()
 

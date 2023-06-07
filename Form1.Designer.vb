@@ -103,6 +103,7 @@ Partial Class Form1
         ' 
         ' txt_uname
         ' 
+        txt_uname.CharacterCasing = CharacterCasing.Upper
         txt_uname.Location = New Point(146, 114)
         txt_uname.Name = "txt_uname"
         txt_uname.Size = New Size(196, 23)
@@ -110,6 +111,7 @@ Partial Class Form1
         ' 
         ' txt_pwd
         ' 
+        txt_pwd.CharacterCasing = CharacterCasing.Upper
         txt_pwd.Location = New Point(146, 176)
         txt_pwd.Name = "txt_pwd"
         txt_pwd.Size = New Size(196, 23)

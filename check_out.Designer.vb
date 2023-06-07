@@ -93,6 +93,7 @@ Partial Class check_out
         ' 
         ' txt_roomNo
         ' 
+        txt_roomNo.CharacterCasing = CharacterCasing.Upper
         txt_roomNo.Location = New Point(682, 68)
         txt_roomNo.Name = "txt_roomNo"
         txt_roomNo.Size = New Size(82, 23)

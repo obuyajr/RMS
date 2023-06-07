@@ -74,6 +74,7 @@ Partial Class add_users
         ' 
         ' txt_uname
         ' 
+        txt_uname.CharacterCasing = CharacterCasing.Upper
         txt_uname.Location = New Point(145, 97)
         txt_uname.Name = "txt_uname"
         txt_uname.Size = New Size(149, 23)
@@ -120,7 +121,8 @@ Partial Class add_users
         Controls.Add(Label1)
         Controls.Add(btn_add)
         Name = "add_users"
-        Text = "add_users"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "ADD USERS"
         ResumeLayout(False)
         PerformLayout()
     End Sub

@@ -179,7 +179,7 @@ Partial Class admin_dashboard
         MdiChildrenMinimizedAnchorBottom = False
         Name = "admin_dashboard"
         StartPosition = FormStartPosition.WindowsDefaultBounds
-        Text = "admin_dashboard"
+        Text = "ADMIN DASHBOARD"
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         StatusStrip1.ResumeLayout(False)

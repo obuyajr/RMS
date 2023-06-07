@@ -37,6 +37,7 @@ Partial Class edit_users
         ' 
         ' txt_uname
         ' 
+        txt_uname.CharacterCasing = CharacterCasing.Upper
         txt_uname.Location = New Point(630, 55)
         txt_uname.Name = "txt_uname"
         txt_uname.Size = New Size(100, 23)
@@ -44,6 +45,7 @@ Partial Class edit_users
         ' 
         ' txt_password
         ' 
+        txt_password.CharacterCasing = CharacterCasing.Upper
         txt_password.Location = New Point(630, 108)
         txt_password.Name = "txt_password"
         txt_password.Size = New Size(100, 23)

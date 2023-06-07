@@ -74,8 +74,10 @@ Partial Class edit_room
         ' 
         ' txt_roomNo
         ' 
+        txt_roomNo.CharacterCasing = CharacterCasing.Upper
         txt_roomNo.Location = New Point(117, 29)
         txt_roomNo.Name = "txt_roomNo"
+        txt_roomNo.ReadOnly = True
         txt_roomNo.Size = New Size(74, 23)
         txt_roomNo.TabIndex = 4
         ' 
@@ -90,6 +92,7 @@ Partial Class edit_room
         ' 
         ' txt_rates
         ' 
+        txt_rates.CharacterCasing = CharacterCasing.Upper
         txt_rates.Location = New Point(117, 144)
         txt_rates.Name = "txt_rates"
         txt_rates.Size = New Size(121, 23)

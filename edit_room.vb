@@ -59,16 +59,10 @@ Public Class edit_room
     End Sub
 
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
-        '
-        ' Retrieve the edited values from the textboxes
-        Dim updatedRoomNo As String = txt_roomNo.Text.Trim()
-        Dim updatedRoomType As String = combo_roomType.SelectedItem.ToString()
-        Dim updatedRates As String = txt_rates.Text.Trim()
-        Dim updatedStatus As String = combo_status.SelectedItem.ToString()
-
 
         ' Retrieve the selected row
         Dim selectedRow As DataGridViewRow = Nothing
+
         For Each row As DataGridViewRow In DataGridView1.Rows
             If Convert.ToBoolean(row.Cells("Select").Value) Then
                 selectedRow = row
@@ -81,19 +75,28 @@ Public Class edit_room
             Dim roomNumber As String = Convert.ToString(selectedRow.Cells("Room_no").Value)
 
 
-            Dim query As String = "UPDATE rooms SET Room_type = @Roomtype,
-            Rates = @Rates, Room_status = @roomStatus WHERE Room_no = @roomNo"
-            Using command As New SqlCommand(query, con)
-                command.Parameters.AddWithValue("@Roomtype", updatedRoomType)
-                command.Parameters.AddWithValue("@Rates", updatedRates)
-                command.Parameters.AddWithValue("@roomStatus", updatedStatus)
-                command.Parameters.AddWithValue("@roomNo", updatedRoomNo)
+            Dim StrCmd As String = "UPDATE rooms" &
+                                  " SET Room_type= '" & combo_roomType.SelectedItem.ToString() & "'" &
+                                  "   , Rates= " & txt_rates.Text.Trim() & "" &
+                                  "   ,Room_status= '" & combo_status.SelectedItem.ToString() & "'" &
+                                  " WHERE Room_no = '" & txt_roomNo.Text.Trim() & "'"
 
-                MsgBox("ROOM DETAILS EDITED SUCCESSFULLY !!")
-                command.ExecuteNonQuery()
-            End Using
+            cmd = New SqlCommand(StrCmd, con)
 
-            ' Refresh the DataGridView to reflect the change
+            Try
+                MessageBox.Show("ROOM DETAILS EDITED SUCCESSFULLY")
+                cmd.ExecuteNonQuery()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+            cmd.Dispose()
+
+
+
+
+
+
 
 
             ' Clear the textboxes and selection

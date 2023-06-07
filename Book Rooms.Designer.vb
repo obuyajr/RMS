@@ -43,11 +43,11 @@ Partial Class Book_Rooms
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
         ToolStripStatusLabel2 = New ToolStripStatusLabel()
+        ToolStripStatusLabel3 = New ToolStripStatusLabel()
         roomType = New TextBox()
         txt_roomStatus = New TextBox()
         Label9 = New Label()
         Timer1 = New Timer(components)
-        ToolStripStatusLabel3 = New ToolStripStatusLabel()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         StatusStrip1.SuspendLayout()
         SuspendLayout()
@@ -161,6 +161,7 @@ Partial Class Book_Rooms
         ' txt_total
         ' 
         txt_total.BackColor = SystemColors.MenuText
+        txt_total.CharacterCasing = CharacterCasing.Upper
         txt_total.ForeColor = Color.Yellow
         txt_total.Location = New Point(686, 387)
         txt_total.Name = "txt_total"
@@ -170,6 +171,7 @@ Partial Class Book_Rooms
         ' txt_roomNo
         ' 
         txt_roomNo.BackColor = SystemColors.Desktop
+        txt_roomNo.CharacterCasing = CharacterCasing.Upper
         txt_roomNo.ForeColor = SystemColors.MenuHighlight
         txt_roomNo.Location = New Point(615, 33)
         txt_roomNo.Name = "txt_roomNo"
@@ -178,6 +180,7 @@ Partial Class Book_Rooms
         ' 
         ' txt_rates
         ' 
+        txt_rates.CharacterCasing = CharacterCasing.Upper
         txt_rates.Location = New Point(616, 114)
         txt_rates.Name = "txt_rates"
         txt_rates.Size = New Size(140, 23)
@@ -185,6 +188,7 @@ Partial Class Book_Rooms
         ' 
         ' txt_guestName
         ' 
+        txt_guestName.CharacterCasing = CharacterCasing.Upper
         txt_guestName.Location = New Point(616, 190)
         txt_guestName.Name = "txt_guestName"
         txt_guestName.Size = New Size(200, 23)
@@ -192,6 +196,7 @@ Partial Class Book_Rooms
         ' 
         ' txt_phoneNo
         ' 
+        txt_phoneNo.CharacterCasing = CharacterCasing.Upper
         txt_phoneNo.Location = New Point(616, 223)
         txt_phoneNo.Name = "txt_phoneNo"
         txt_phoneNo.Size = New Size(140, 23)
@@ -218,8 +223,15 @@ Partial Class Book_Rooms
         ToolStripStatusLabel2.Size = New Size(88, 17)
         ToolStripStatusLabel2.Text = "Loogged in as :"
         ' 
+        ' ToolStripStatusLabel3
+        ' 
+        ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        ToolStripStatusLabel3.Size = New Size(119, 17)
+        ToolStripStatusLabel3.Text = "ToolStripStatusLabel3"
+        ' 
         ' roomType
         ' 
+        roomType.CharacterCasing = CharacterCasing.Upper
         roomType.Location = New Point(616, 73)
         roomType.Name = "roomType"
         roomType.Size = New Size(202, 23)
@@ -227,6 +239,7 @@ Partial Class Book_Rooms
         ' 
         ' txt_roomStatus
         ' 
+        txt_roomStatus.CharacterCasing = CharacterCasing.Upper
         txt_roomStatus.Location = New Point(616, 150)
         txt_roomStatus.Name = "txt_roomStatus"
         txt_roomStatus.Size = New Size(140, 23)
@@ -240,12 +253,6 @@ Partial Class Book_Rooms
         Label9.Size = New Size(74, 15)
         Label9.TabIndex = 21
         Label9.Text = "Room Status"
-        ' 
-        ' ToolStripStatusLabel3
-        ' 
-        ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        ToolStripStatusLabel3.Size = New Size(119, 17)
-        ToolStripStatusLabel3.Text = "ToolStripStatusLabel3"
         ' 
         ' Book_Rooms
         ' 
@@ -275,7 +282,8 @@ Partial Class Book_Rooms
         Controls.Add(Label1)
         Controls.Add(btn_book)
         Name = "Book_Rooms"
-        Text = "Book_Rooms"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "BOOK ROOMS"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()

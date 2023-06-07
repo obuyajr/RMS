@@ -126,22 +126,36 @@ Public Class Book_Rooms
     Private Sub PrintDocument_PrintPage(sender As Object, e As PrintPageEventArgs)
         ' Define the content to be printed
         Dim content As String = "Booking Details:" & Environment.NewLine &
-            "Room No: " & txt_roomNo.Text & Environment.NewLine &
-            "Room Type: " & roomType.Text & Environment.NewLine &
-            "Rates: " & txt_rates.Text & Environment.NewLine &
-            "Guest Name: " & txt_guestName.Text & Environment.NewLine &
-            "Phone Number: " & txt_phoneNo.Text & Environment.NewLine &
-            "Check-in Date: " & checkin_date.Value.ToString() & Environment.NewLine &
-            "Checkout Date: " & checkout_date.Value.ToString() & Environment.NewLine &
-            "Total: " & txt_total.Text & Environment.NewLine &
-            "SERVED BY: " & ToolStripStatusLabel3.Text
+        "Room No: " & txt_roomNo.Text & Environment.NewLine &
+        "Room Type: " & roomType.Text & Environment.NewLine &
+        "Rates: " & txt_rates.Text & Environment.NewLine &
+        "Guest Name: " & txt_guestName.Text & Environment.NewLine &
+        "Phone Number: " & txt_phoneNo.Text & Environment.NewLine &
+        "Check-in Date: " & checkin_date.Value.ToString() & Environment.NewLine &
+        "Checkout Date: " & checkout_date.Value.ToString() & Environment.NewLine &
+        "Total: " & txt_total.Text & Environment.NewLine &
+        "SERVED BY: " & ToolStripStatusLabel3.Text
 
         ' Define the font and brush for drawing the content
         Dim font As New Font("Arial", 12)
         Dim brush As New SolidBrush(Color.Black)
 
-        ' Draw the content on the print page
-        e.Graphics.DrawString(content, font, brush, New PointF(50, 50))
+        ' Define the printable area of the thermal printer
+        Dim printableAreaWidth As Single = 200 ' Example width in points
+        Dim printableAreaHeight As Single = 150 ' Example height in points
+
+        ' Calculate the available content area within the printable area
+        Dim contentArea As New RectangleF(0, 0, printableAreaWidth, printableAreaHeight)
+
+        ' Center the content horizontally within the printable area
+        Dim format As New StringFormat()
+        format.Alignment = StringAlignment.Center
+
+        ' Draw the content on the print page within the content area
+        e.Graphics.DrawString(content, font, brush, contentArea, format)
+
+        ' Indicate that there are no more pages to print
+        e.HasMorePages = False
     End Sub
 
 

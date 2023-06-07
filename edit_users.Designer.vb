@@ -29,7 +29,7 @@ Partial Class edit_users
         Label3 = New Label()
         DataGridView1 = New DataGridView()
         btn_edit = New Button()
-        Button2 = New Button()
+        btn_delete = New Button()
         btn_close = New Button()
         combo_utype = New ComboBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -99,16 +99,16 @@ Partial Class edit_users
         btn_edit.Text = "EDIT"
         btn_edit.UseVisualStyleBackColor = False
         ' 
-        ' Button2
+        ' btn_delete
         ' 
-        Button2.BackColor = SystemColors.Highlight
-        Button2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Button2.Location = New Point(696, 248)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(75, 33)
-        Button2.TabIndex = 8
-        Button2.Text = "DELETE"
-        Button2.UseVisualStyleBackColor = False
+        btn_delete.BackColor = SystemColors.Highlight
+        btn_delete.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_delete.Location = New Point(696, 248)
+        btn_delete.Name = "btn_delete"
+        btn_delete.Size = New Size(75, 33)
+        btn_delete.TabIndex = 8
+        btn_delete.Text = "DELETE"
+        btn_delete.UseVisualStyleBackColor = False
         ' 
         ' btn_close
         ' 
@@ -137,7 +137,7 @@ Partial Class edit_users
         ClientSize = New Size(800, 450)
         Controls.Add(combo_utype)
         Controls.Add(btn_close)
-        Controls.Add(Button2)
+        Controls.Add(btn_delete)
         Controls.Add(btn_edit)
         Controls.Add(DataGridView1)
         Controls.Add(Label3)
@@ -159,7 +159,7 @@ Partial Class edit_users
     Friend WithEvents Label3 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btn_edit As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btn_delete As Button
     Friend WithEvents btn_close As Button
     Friend WithEvents combo_utype As ComboBox
 End Class

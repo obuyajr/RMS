@@ -121,6 +121,38 @@ Public Class edit_users
         DataGridView1.DataSource = dataTable
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        ' Retrieve the selected row
+        Dim selectedRow As DataGridViewRow = Nothing
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            If Convert.ToBoolean(row.Cells("Select").Value) Then
+                selectedRow = row
+                Exit For
+            End If
+        Next
+
+        ' Delete the selected user from the database
+        If selectedRow IsNot Nothing Then
+            Dim userId As Integer = Convert.ToInt32(selectedRow.Cells("user_id").Value)
+
+            Dim query As String = "DELETE FROM user_login WHERE user_id = @user_id"
+            Using command As New SqlCommand(query, con)
+                command.Parameters.AddWithValue("@user_id", userId)
+                MsgBox("USER DELETED SUCCESSFULLY !!")
+                command.ExecuteNonQuery()
+            End Using
+
+            ' Refresh the DataGridView to reflect the change
+            RefreshDataGridView()
+
+            ' Clear the textboxes and selection
+            txt_uname.Text = ""
+            txt_password.Text = ""
+            combo_utype.SelectedItem = Nothing
+        End If
+    End Sub
+
+
 
 
 

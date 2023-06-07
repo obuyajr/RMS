@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Diagnostics.Eventing.Reader
 
 Public Class edit_users
     Dim con As New SqlConnection
@@ -133,23 +134,32 @@ Public Class edit_users
 
         ' Delete the selected user from the database
         If selectedRow IsNot Nothing Then
-            Dim userId As Integer = Convert.ToInt32(selectedRow.Cells("user_id").Value)
+            ' Ask for confirmation
+            Dim confirmationResult As DialogResult = MessageBox.Show("Are you sure you want to delete this user?", "Confirmation", MessageBoxButtons.YesNo)
 
-            Dim query As String = "DELETE FROM user_login WHERE user_id = @user_id"
-            Using command As New SqlCommand(query, con)
-                command.Parameters.AddWithValue("@user_id", userId)
+            If confirmationResult = DialogResult.Yes Then
+                Dim userId As Integer = Convert.ToInt32(selectedRow.Cells("user_id").Value)
+
+                Dim query As String = "DELETE FROM user_login WHERE user_id = @user_id"
+                Using command As New SqlCommand(query, con)
+                    command.Parameters.AddWithValue("@user_id", userId)
+                    command.ExecuteNonQuery()
+                End Using
+
+                ' Refresh the DataGridView to reflect the change
+                RefreshDataGridView()
+
+                ' Clear the textboxes and selection
+                txt_uname.Text = ""
+                txt_password.Text = ""
+                combo_utype.SelectedItem = Nothing
+
                 MsgBox("USER DELETED SUCCESSFULLY !!")
-                command.ExecuteNonQuery()
-            End Using
-
-            ' Refresh the DataGridView to reflect the change
-            RefreshDataGridView()
-
-            ' Clear the textboxes and selection
-            txt_uname.Text = ""
-            txt_password.Text = ""
-            combo_utype.SelectedItem = Nothing
+            End If
+        Else
+            MsgBox("SELECT A USER TO DELETE !!")
         End If
+
     End Sub
 
 

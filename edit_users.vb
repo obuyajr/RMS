@@ -79,7 +79,8 @@ Public Class edit_users
         If selectedRow IsNot Nothing Then
             Dim userId As Integer = Convert.ToInt32(selectedRow.Cells("user_id").Value)
 
-            Dim query As String = "UPDATE user_login SET username = @username, password = @password, usertype = @usertype WHERE user_id = @user_id"
+            Dim query As String = "UPDATE user_login SET username = @username,
+            password = @password, usertype = @usertype WHERE user_id = @user_id"
             Using command As New SqlCommand(query, con)
                 command.Parameters.AddWithValue("@username", updatedUsername)
                 command.Parameters.AddWithValue("@password", updatedPassword)

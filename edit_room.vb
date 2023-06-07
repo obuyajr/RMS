@@ -17,6 +17,7 @@ Public Class edit_room
         Dim dataTable As New DataTable()
         adapter.Fill(dataTable)
 
+
         ' Add the checkbox column to the DataGridView
         Dim checkBoxColumn As New DataGridViewCheckBoxColumn()
         checkBoxColumn.Name = "Select"
@@ -25,6 +26,7 @@ Public Class edit_room
 
         ' Assign the DataTable as the DataGridView's data source
         DataGridView1.DataSource = dataTable
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -57,36 +59,82 @@ Public Class edit_room
     End Sub
 
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+        '
+        ' Retrieve the edited values from the textboxes
+        Dim updatedRoomNo As String = txt_roomNo.Text.Trim()
+        Dim updatedRoomType As String = combo_roomType.SelectedItem.ToString()
+        Dim updatedRates As String = txt_rates.Text.Trim()
+        Dim updatedStatus As String = combo_status.SelectedItem.ToString()
 
 
-        cmd = con.CreateCommand()
-        cmd.CommandText = "UPDATE rooms SET room_type = @roomType,
-        rates = @rates, Room_status = @status WHERE room_no = @roomNo"
-        cmd.Parameters.AddWithValue("@roomType", combo_roomType.SelectedItem.ToString())
-        cmd.Parameters.AddWithValue("@rates", txt_rates.Text)
-        cmd.Parameters.AddWithValue("@status", combo_status.SelectedItem.ToString())
-        cmd.Parameters.AddWithValue("@roomNo", txt_roomNo.Text)
-        UpdateGrid()
-        cmd.ExecuteNonQuery()
-        MsgBox("ROOM UPDATED SUCCESSFULLY")
+        ' Retrieve the selected row
+        Dim selectedRow As DataGridViewRow = Nothing
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            If Convert.ToBoolean(row.Cells("Select").Value) Then
+                selectedRow = row
+                Exit For
+            End If
+        Next
+
+        ' Update the corresponding record in the database
+        If selectedRow IsNot Nothing Then
+            Dim roomNumber As String = Convert.ToString(selectedRow.Cells("Room_no").Value)
+
+
+            Dim query As String = "UPDATE rooms SET Room_type = @Roomtype,
+            Rates = @Rates, Room_status = @roomStatus WHERE Room_no = @roomNo"
+            Using command As New SqlCommand(query, con)
+                command.Parameters.AddWithValue("@Roomtype", updatedRoomType)
+                command.Parameters.AddWithValue("@Rates", updatedRates)
+                command.Parameters.AddWithValue("@roomStatus", updatedStatus)
+                command.Parameters.AddWithValue("@roomNo", updatedRoomNo)
+
+                MsgBox("ROOM DETAILS EDITED SUCCESSFULLY !!")
+                command.ExecuteNonQuery()
+            End Using
+
+            ' Refresh the DataGridView to reflect the change
+
+
+            ' Clear the textboxes and selection
+            txt_roomNo.Text = ""
+            combo_roomType.SelectedItem = Nothing
+            txt_rates.Text = ""
+            combo_status.SelectedItem = Nothing
+
+            UpdateGrid()
+        End If
+
+
+
+
+        '
+
+
 
     End Sub
 
     'update tableGrid
     Private Sub UpdateGrid()
-        ' Assuming you have a DataGridView control named dgv_rooms
-
-        ' Clear the existing data in the grid
+        ' Clear the existing data in the DataGridView
+        DataGridView1.DataSource = Nothing
         DataGridView1.Rows.Clear()
+        DataGridView1.Columns.Clear()
 
-        ' Retrieve updated data from the database and populate the grid
-        cmd = con.CreateCommand()
-        cmd.CommandText = "SELECT * FROM rooms"
-        Dim reader As SqlDataReader = cmd.ExecuteReader()
-        While reader.Read()
-            DataGridView1.Rows.Add(reader("Room_no"), reader("Room_type"), reader("Rates"), reader("Room_status"))
-        End While
-        reader.Close()
+        ' Fetch the updated data from the database
+        Dim query As String = "SELECT * FROM rooms"
+        Dim adapter As New SqlDataAdapter(query, con)
+        Dim dataTable As New DataTable()
+        adapter.Fill(dataTable)
+
+        ' Add the checkbox column to the DataGridView
+        Dim checkBoxColumn As New DataGridViewCheckBoxColumn()
+        checkBoxColumn.Name = "Select"
+        checkBoxColumn.HeaderText = "Select"
+        DataGridView1.Columns.Add(checkBoxColumn)
+
+        ' Assign the DataTable as the DataGridView's data source
+        DataGridView1.DataSource = dataTable
     End Sub
 
 

@@ -40,7 +40,7 @@ Partial Class user_dashbord
         btn_logout.ImageAlign = ContentAlignment.TopCenter
         btn_logout.Location = New Point(682, 3)
         btn_logout.Name = "btn_logout"
-        btn_logout.Size = New Size(106, 70)
+        btn_logout.Size = New Size(71, 70)
         btn_logout.TabIndex = 0
         btn_logout.Text = "LOGOUT"
         btn_logout.TextAlign = ContentAlignment.BottomCenter
@@ -83,9 +83,9 @@ Partial Class user_dashbord
         btn_checkout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_checkout.Image = My.Resources.Resources.log_out_regular_48
         btn_checkout.ImageAlign = ContentAlignment.TopCenter
-        btn_checkout.Location = New Point(309, 3)
+        btn_checkout.Location = New Point(150, 3)
         btn_checkout.Name = "btn_checkout"
-        btn_checkout.Size = New Size(102, 70)
+        btn_checkout.Size = New Size(78, 70)
         btn_checkout.TabIndex = 1
         btn_checkout.Text = "Check Out"
         btn_checkout.TextAlign = ContentAlignment.BottomCenter
@@ -98,7 +98,7 @@ Partial Class user_dashbord
         btn_bookRoom.ImageAlign = ContentAlignment.TopCenter
         btn_bookRoom.Location = New Point(12, 3)
         btn_bookRoom.Name = "btn_bookRoom"
-        btn_bookRoom.Size = New Size(106, 70)
+        btn_bookRoom.Size = New Size(80, 70)
         btn_bookRoom.TabIndex = 0
         btn_bookRoom.Text = "Book Room"
         btn_bookRoom.TextAlign = ContentAlignment.BottomCenter
@@ -108,11 +108,12 @@ Partial Class user_dashbord
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.WindowFrame
         ClientSize = New Size(800, 454)
         Controls.Add(Panel1)
         Controls.Add(StatusStrip1)
         Name = "user_dashbord"
-        Text = "user_dashbord"
+        Text = "USER DASHBOARD"
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()
         Panel1.ResumeLayout(False)

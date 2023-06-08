@@ -35,29 +35,30 @@ Partial Class Form1
         ' 
         ' btn_login
         ' 
+        btn_login.BackColor = Color.Yellow
         btn_login.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_login.Image = My.Resources.Resources.chevrons_right_regular_24
         btn_login.ImageAlign = ContentAlignment.MiddleRight
-        btn_login.Location = New Point(35, 289)
+        btn_login.Location = New Point(85, 277)
         btn_login.Name = "btn_login"
-        btn_login.Size = New Size(78, 34)
+        btn_login.Size = New Size(98, 46)
         btn_login.TabIndex = 0
         btn_login.Text = "LOGIN"
-        btn_login.TextAlign = ContentAlignment.MiddleLeft
-        btn_login.UseVisualStyleBackColor = True
+        btn_login.UseVisualStyleBackColor = False
         ' 
         ' btn_close
         ' 
+        btn_close.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        btn_close.BackColor = Color.Yellow
         btn_close.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_close.Image = My.Resources.Resources.close
         btn_close.ImageAlign = ContentAlignment.MiddleRight
-        btn_close.Location = New Point(270, 289)
+        btn_close.Location = New Point(366, 277)
         btn_close.Name = "btn_close"
-        btn_close.Size = New Size(79, 34)
+        btn_close.Size = New Size(98, 46)
         btn_close.TabIndex = 1
         btn_close.Text = "CLOSE"
-        btn_close.TextAlign = ContentAlignment.MiddleLeft
-        btn_close.UseVisualStyleBackColor = True
+        btn_close.UseVisualStyleBackColor = False
         ' 
         ' combo_utype
         ' 

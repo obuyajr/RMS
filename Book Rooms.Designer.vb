@@ -54,8 +54,9 @@ Partial Class Book_Rooms
         ' 
         ' btn_book
         ' 
+        btn_book.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         btn_book.BackColor = Color.Crimson
-        btn_book.Location = New Point(638, 441)
+        btn_book.Location = New Point(1004, 459)
         btn_book.Name = "btn_book"
         btn_book.Size = New Size(118, 41)
         btn_book.TabIndex = 0
@@ -65,7 +66,7 @@ Partial Class Book_Rooms
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(544, 36)
+        Label1.Location = New Point(723, 43)
         Label1.Name = "Label1"
         Label1.Size = New Size(59, 15)
         Label1.TabIndex = 1
@@ -74,7 +75,7 @@ Partial Class Book_Rooms
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(537, 76)
+        Label2.Location = New Point(716, 83)
         Label2.Name = "Label2"
         Label2.Size = New Size(66, 15)
         Label2.TabIndex = 2
@@ -86,13 +87,13 @@ Partial Class Book_Rooms
         DataGridView1.Location = New Point(9, 12)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(480, 426)
+        DataGridView1.Size = New Size(578, 426)
         DataGridView1.TabIndex = 3
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(553, 117)
+        Label3.Location = New Point(732, 124)
         Label3.Name = "Label3"
         Label3.Size = New Size(35, 15)
         Label3.TabIndex = 4
@@ -100,14 +101,14 @@ Partial Class Book_Rooms
         ' 
         ' checkin_date
         ' 
-        checkin_date.Location = New Point(616, 268)
+        checkin_date.Location = New Point(795, 275)
         checkin_date.Name = "checkin_date"
         checkin_date.Size = New Size(200, 23)
         checkin_date.TabIndex = 5
         ' 
         ' checkout_date
         ' 
-        checkout_date.Location = New Point(618, 307)
+        checkout_date.Location = New Point(797, 314)
         checkout_date.Name = "checkout_date"
         checkout_date.Size = New Size(200, 23)
         checkout_date.TabIndex = 6
@@ -115,7 +116,7 @@ Partial Class Book_Rooms
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(516, 193)
+        Label4.Location = New Point(695, 200)
         Label4.Name = "Label4"
         Label4.Size = New Size(72, 15)
         Label4.TabIndex = 7
@@ -124,7 +125,7 @@ Partial Class Book_Rooms
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(505, 231)
+        Label5.Location = New Point(684, 238)
         Label5.Name = "Label5"
         Label5.Size = New Size(83, 15)
         Label5.TabIndex = 8
@@ -133,7 +134,7 @@ Partial Class Book_Rooms
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(533, 274)
+        Label6.Location = New Point(712, 281)
         Label6.Name = "Label6"
         Label6.Size = New Size(55, 15)
         Label6.TabIndex = 9
@@ -142,7 +143,7 @@ Partial Class Book_Rooms
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(525, 313)
+        Label7.Location = New Point(704, 320)
         Label7.Name = "Label7"
         Label7.Size = New Size(63, 15)
         Label7.TabIndex = 10
@@ -152,7 +153,7 @@ Partial Class Book_Rooms
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
-        Label8.Location = New Point(587, 387)
+        Label8.Location = New Point(798, 389)
         Label8.Name = "Label8"
         Label8.Size = New Size(68, 25)
         Label8.TabIndex = 11
@@ -163,7 +164,7 @@ Partial Class Book_Rooms
         txt_total.BackColor = SystemColors.MenuText
         txt_total.CharacterCasing = CharacterCasing.Upper
         txt_total.ForeColor = Color.Yellow
-        txt_total.Location = New Point(686, 387)
+        txt_total.Location = New Point(897, 389)
         txt_total.Name = "txt_total"
         txt_total.Size = New Size(100, 23)
         txt_total.TabIndex = 12
@@ -173,7 +174,7 @@ Partial Class Book_Rooms
         txt_roomNo.BackColor = SystemColors.Desktop
         txt_roomNo.CharacterCasing = CharacterCasing.Upper
         txt_roomNo.ForeColor = SystemColors.MenuHighlight
-        txt_roomNo.Location = New Point(615, 33)
+        txt_roomNo.Location = New Point(794, 40)
         txt_roomNo.Name = "txt_roomNo"
         txt_roomNo.Size = New Size(201, 23)
         txt_roomNo.TabIndex = 13
@@ -181,7 +182,7 @@ Partial Class Book_Rooms
         ' txt_rates
         ' 
         txt_rates.CharacterCasing = CharacterCasing.Upper
-        txt_rates.Location = New Point(616, 114)
+        txt_rates.Location = New Point(795, 121)
         txt_rates.Name = "txt_rates"
         txt_rates.Size = New Size(140, 23)
         txt_rates.TabIndex = 14
@@ -189,7 +190,7 @@ Partial Class Book_Rooms
         ' txt_guestName
         ' 
         txt_guestName.CharacterCasing = CharacterCasing.Upper
-        txt_guestName.Location = New Point(616, 190)
+        txt_guestName.Location = New Point(795, 197)
         txt_guestName.Name = "txt_guestName"
         txt_guestName.Size = New Size(200, 23)
         txt_guestName.TabIndex = 15
@@ -197,7 +198,7 @@ Partial Class Book_Rooms
         ' txt_phoneNo
         ' 
         txt_phoneNo.CharacterCasing = CharacterCasing.Upper
-        txt_phoneNo.Location = New Point(616, 223)
+        txt_phoneNo.Location = New Point(795, 230)
         txt_phoneNo.Name = "txt_phoneNo"
         txt_phoneNo.Size = New Size(140, 23)
         txt_phoneNo.TabIndex = 16
@@ -207,7 +208,7 @@ Partial Class Book_Rooms
         StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2, ToolStripStatusLabel3})
         StatusStrip1.Location = New Point(0, 512)
         StatusStrip1.Name = "StatusStrip1"
-        StatusStrip1.Size = New Size(878, 22)
+        StatusStrip1.Size = New Size(1182, 22)
         StatusStrip1.TabIndex = 18
         StatusStrip1.Text = "StatusStrip1"
         ' 
@@ -232,7 +233,7 @@ Partial Class Book_Rooms
         ' roomType
         ' 
         roomType.CharacterCasing = CharacterCasing.Upper
-        roomType.Location = New Point(616, 73)
+        roomType.Location = New Point(795, 80)
         roomType.Name = "roomType"
         roomType.Size = New Size(202, 23)
         roomType.TabIndex = 19
@@ -240,7 +241,7 @@ Partial Class Book_Rooms
         ' txt_roomStatus
         ' 
         txt_roomStatus.CharacterCasing = CharacterCasing.Upper
-        txt_roomStatus.Location = New Point(616, 150)
+        txt_roomStatus.Location = New Point(795, 157)
         txt_roomStatus.Name = "txt_roomStatus"
         txt_roomStatus.Size = New Size(140, 23)
         txt_roomStatus.TabIndex = 20
@@ -248,7 +249,7 @@ Partial Class Book_Rooms
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(514, 158)
+        Label9.Location = New Point(693, 165)
         Label9.Name = "Label9"
         Label9.Size = New Size(74, 15)
         Label9.TabIndex = 21
@@ -259,7 +260,7 @@ Partial Class Book_Rooms
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.GhostWhite
-        ClientSize = New Size(878, 534)
+        ClientSize = New Size(1182, 534)
         Controls.Add(Label9)
         Controls.Add(txt_roomStatus)
         Controls.Add(roomType)

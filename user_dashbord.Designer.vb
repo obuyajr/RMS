@@ -35,10 +35,11 @@ Partial Class user_dashbord
         ' 
         ' btn_logout
         ' 
+        btn_logout.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btn_logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_logout.Image = My.Resources.Resources.log_out_circle_regular_48
         btn_logout.ImageAlign = ContentAlignment.TopCenter
-        btn_logout.Location = New Point(682, 3)
+        btn_logout.Location = New Point(717, 3)
         btn_logout.Name = "btn_logout"
         btn_logout.Size = New Size(71, 70)
         btn_logout.TabIndex = 0
@@ -69,6 +70,7 @@ Partial Class user_dashbord
         ' 
         ' Panel1
         ' 
+        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Panel1.BackColor = Color.IndianRed
         Panel1.Controls.Add(btn_checkout)
         Panel1.Controls.Add(btn_bookRoom)
@@ -114,6 +116,7 @@ Partial Class user_dashbord
         Controls.Add(StatusStrip1)
         Name = "user_dashbord"
         Text = "USER DASHBOARD"
+        WindowState = FormWindowState.Maximized
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()
         Panel1.ResumeLayout(False)

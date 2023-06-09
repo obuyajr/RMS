@@ -111,7 +111,7 @@ Partial Class add_users
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Lavender
-        ClientSize = New Size(354, 391)
+        ClientSize = New Size(665, 391)
         Controls.Add(Button1)
         Controls.Add(combo_utype)
         Controls.Add(txt_password)

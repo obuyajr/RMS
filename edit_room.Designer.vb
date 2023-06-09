@@ -38,43 +38,53 @@ Partial Class edit_room
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.Location = New Point(34, 32)
         Label1.Name = "Label1"
-        Label1.Size = New Size(64, 15)
+        Label1.Size = New Size(65, 15)
         Label1.TabIndex = 0
         Label1.Text = "ROOM NO"
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.Location = New Point(26, 89)
         Label2.Name = "Label2"
-        Label2.Size = New Size(72, 15)
+        Label2.Size = New Size(74, 15)
         Label2.TabIndex = 1
         Label2.Text = "ROOM TYPE"
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.Location = New Point(53, 196)
         Label3.Name = "Label3"
-        Label3.Size = New Size(45, 15)
+        Label3.Size = New Size(50, 15)
         Label3.TabIndex = 2
         Label3.Text = "STATUS"
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label4.Location = New Point(59, 147)
         Label4.Name = "Label4"
-        Label4.Size = New Size(39, 15)
+        Label4.Size = New Size(42, 15)
         Label4.TabIndex = 3
         Label4.Text = "RATES"
         ' 
         ' txt_roomNo
         ' 
+        txt_roomNo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         txt_roomNo.CharacterCasing = CharacterCasing.Upper
+        txt_roomNo.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txt_roomNo.Location = New Point(117, 29)
         txt_roomNo.Name = "txt_roomNo"
         txt_roomNo.ReadOnly = True
@@ -83,6 +93,8 @@ Partial Class edit_room
         ' 
         ' combo_roomType
         ' 
+        combo_roomType.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        combo_roomType.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         combo_roomType.FormattingEnabled = True
         combo_roomType.Items.AddRange(New Object() {"DELUXE", "NORMAL"})
         combo_roomType.Location = New Point(117, 86)
@@ -92,7 +104,9 @@ Partial Class edit_room
         ' 
         ' txt_rates
         ' 
+        txt_rates.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         txt_rates.CharacterCasing = CharacterCasing.Upper
+        txt_rates.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txt_rates.Location = New Point(117, 144)
         txt_rates.Name = "txt_rates"
         txt_rates.Size = New Size(121, 23)
@@ -100,8 +114,10 @@ Partial Class edit_room
         ' 
         ' combo_status
         ' 
+        combo_status.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        combo_status.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         combo_status.FormattingEnabled = True
-        combo_status.Items.AddRange(New Object() {"UNBOOKED"})
+        combo_status.Items.AddRange(New Object() {"UNBOOKED", "BOOKED"})
         combo_status.Location = New Point(117, 193)
         combo_status.Name = "combo_status"
         combo_status.Size = New Size(121, 23)
@@ -109,15 +125,19 @@ Partial Class edit_room
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridView1.BackgroundColor = SystemColors.MenuHighlight
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(350, 12)
+        DataGridView1.Location = New Point(336, 12)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(438, 426)
+        DataGridView1.Size = New Size(569, 426)
         DataGridView1.TabIndex = 8
         ' 
         ' btn_edit
         ' 
+        btn_edit.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        btn_edit.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_edit.Location = New Point(23, 295)
         btn_edit.Name = "btn_edit"
         btn_edit.Size = New Size(75, 23)
@@ -127,6 +147,8 @@ Partial Class edit_room
         ' 
         ' btn_delete
         ' 
+        btn_delete.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        btn_delete.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_delete.Location = New Point(163, 295)
         btn_delete.Name = "btn_delete"
         btn_delete.Size = New Size(75, 23)
@@ -138,7 +160,8 @@ Partial Class edit_room
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        BackColor = SystemColors.Window
+        ClientSize = New Size(917, 450)
         Controls.Add(btn_delete)
         Controls.Add(btn_edit)
         Controls.Add(DataGridView1)
@@ -150,8 +173,10 @@ Partial Class edit_room
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        MaximizeBox = False
         Name = "edit_room"
-        Text = "edit_room"
+        Text = "EDIT ROOMS"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

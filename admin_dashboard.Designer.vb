@@ -134,31 +134,37 @@ Partial Class admin_dashboard
         ' 
         ' ToolStripStatusLabel1
         ' 
+        ToolStripStatusLabel1.BackColor = Color.White
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         ToolStripStatusLabel1.Size = New Size(80, 17)
         ToolStripStatusLabel1.Text = "Logged in as: "
         ' 
         ' ToolStripStatusLabel2
         ' 
+        ToolStripStatusLabel2.BackColor = Color.White
+        ToolStripStatusLabel2.ForeColor = Color.Green
         ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
         ToolStripStatusLabel2.Size = New Size(119, 17)
         ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
         ' 
         ' Panel1
         ' 
+        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Panel1.BackColor = Color.IndianRed
+        Panel1.BorderStyle = BorderStyle.FixedSingle
         Panel1.Controls.Add(btn_logout)
-        Panel1.Location = New Point(0, 42)
+        Panel1.Location = New Point(12, 42)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(800, 100)
+        Panel1.Size = New Size(776, 100)
         Panel1.TabIndex = 3
         ' 
         ' btn_logout
         ' 
+        btn_logout.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btn_logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_logout.Image = My.Resources.Resources.log_out_circle_regular_48
         btn_logout.ImageAlign = ContentAlignment.TopCenter
-        btn_logout.Location = New Point(682, 14)
+        btn_logout.Location = New Point(656, 14)
         btn_logout.Name = "btn_logout"
         btn_logout.Size = New Size(106, 70)
         btn_logout.TabIndex = 1
@@ -170,16 +176,19 @@ Partial Class admin_dashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.WindowFrame
         ClientSize = New Size(800, 450)
         Controls.Add(Panel1)
         Controls.Add(StatusStrip1)
         Controls.Add(MenuStrip1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
         IsMdiContainer = True
         MainMenuStrip = MenuStrip1
         MdiChildrenMinimizedAnchorBottom = False
         Name = "admin_dashboard"
-        StartPosition = FormStartPosition.WindowsDefaultBounds
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ADMIN DASHBOARD"
+        WindowState = FormWindowState.Maximized
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         StatusStrip1.ResumeLayout(False)

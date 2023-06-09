@@ -53,7 +53,7 @@ Partial Class Form1
         btn_close.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_close.Image = My.Resources.Resources.close
         btn_close.ImageAlign = ContentAlignment.MiddleRight
-        btn_close.Location = New Point(366, 277)
+        btn_close.Location = New Point(321, 277)
         btn_close.Name = "btn_close"
         btn_close.Size = New Size(98, 46)
         btn_close.TabIndex = 1
@@ -135,7 +135,7 @@ Partial Class Form1
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Gray
         BackgroundImage = My.Resources.Resources.building_house_solid_72___Copy
-        ClientSize = New Size(551, 344)
+        ClientSize = New Size(506, 344)
         Controls.Add(Label4)
         Controls.Add(txt_pwd)
         Controls.Add(txt_uname)
@@ -145,6 +145,8 @@ Partial Class Form1
         Controls.Add(combo_utype)
         Controls.Add(btn_close)
         Controls.Add(btn_login)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        MaximizeBox = False
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
         Text = "HAPPY CHOICE LTD"

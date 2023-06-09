@@ -48,8 +48,11 @@ Partial Class Book_Rooms
         txt_roomStatus = New TextBox()
         Label9 = New Label()
         Timer1 = New Timer(components)
+        Panel1 = New Panel()
+        Panel2 = New Panel()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         StatusStrip1.SuspendLayout()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' btn_book
@@ -57,9 +60,9 @@ Partial Class Book_Rooms
         btn_book.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         btn_book.BackColor = Color.Crimson
         btn_book.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        btn_book.Location = New Point(1004, 459)
+        btn_book.Location = New Point(228, 14)
         btn_book.Name = "btn_book"
-        btn_book.Size = New Size(118, 41)
+        btn_book.Size = New Size(118, 33)
         btn_book.TabIndex = 0
         btn_book.Text = "Book n Print"
         btn_book.UseVisualStyleBackColor = False
@@ -292,6 +295,24 @@ Partial Class Book_Rooms
         Label9.TabIndex = 21
         Label9.Text = "Room Status"
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.White
+        Panel1.BorderStyle = BorderStyle.Fixed3D
+        Panel1.Location = New Point(774, 13)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(396, 417)
+        Panel1.TabIndex = 22
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BorderStyle = BorderStyle.FixedSingle
+        Panel2.Controls.Add(btn_book)
+        Panel2.Location = New Point(774, 436)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(396, 64)
+        Panel2.TabIndex = 23
+        ' 
         ' Book_Rooms
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -318,13 +339,16 @@ Partial Class Book_Rooms
         Controls.Add(DataGridView1)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(btn_book)
+        Controls.Add(Panel1)
+        Controls.Add(Panel2)
+        MaximizeBox = False
         Name = "Book_Rooms"
         StartPosition = FormStartPosition.CenterScreen
         Text = "BOOK ROOMS"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()
+        Panel2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -354,4 +378,6 @@ Partial Class Book_Rooms
     Friend WithEvents Label9 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class

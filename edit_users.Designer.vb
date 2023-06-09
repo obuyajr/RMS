@@ -37,25 +37,28 @@ Partial Class edit_users
         ' 
         ' txt_uname
         ' 
+        txt_uname.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         txt_uname.CharacterCasing = CharacterCasing.Upper
-        txt_uname.Location = New Point(630, 55)
+        txt_uname.Location = New Point(774, 55)
         txt_uname.Name = "txt_uname"
         txt_uname.Size = New Size(100, 23)
         txt_uname.TabIndex = 0
         ' 
         ' txt_password
         ' 
+        txt_password.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         txt_password.CharacterCasing = CharacterCasing.Upper
-        txt_password.Location = New Point(630, 108)
+        txt_password.Location = New Point(774, 108)
         txt_password.Name = "txt_password"
         txt_password.Size = New Size(100, 23)
         txt_password.TabIndex = 1
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(553, 58)
+        Label1.Location = New Point(697, 58)
         Label1.Name = "Label1"
         Label1.Size = New Size(71, 15)
         Label1.TabIndex = 3
@@ -63,9 +66,10 @@ Partial Class edit_users
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(551, 111)
+        Label2.Location = New Point(695, 111)
         Label2.Name = "Label2"
         Label2.Size = New Size(73, 15)
         Label2.TabIndex = 4
@@ -73,9 +77,10 @@ Partial Class edit_users
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(560, 165)
+        Label3.Location = New Point(704, 165)
         Label3.Name = "Label3"
         Label3.Size = New Size(64, 15)
         Label3.TabIndex = 5
@@ -84,49 +89,63 @@ Partial Class edit_users
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(2, 44)
+        DataGridView1.Location = New Point(12, 12)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(529, 394)
+        DataGridView1.Size = New Size(552, 426)
         DataGridView1.TabIndex = 6
         ' 
         ' btn_edit
         ' 
-        btn_edit.BackColor = SystemColors.Highlight
+        btn_edit.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
+        btn_edit.BackColor = SystemColors.ControlLightLight
         btn_edit.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        btn_edit.Location = New Point(537, 248)
+        btn_edit.Image = My.Resources.Resources.edit_alt_regular_24
+        btn_edit.ImageAlign = ContentAlignment.MiddleRight
+        btn_edit.Location = New Point(684, 248)
         btn_edit.Name = "btn_edit"
         btn_edit.Size = New Size(75, 33)
         btn_edit.TabIndex = 7
         btn_edit.Text = "EDIT"
+        btn_edit.TextAlign = ContentAlignment.MiddleLeft
         btn_edit.UseVisualStyleBackColor = False
         ' 
         ' btn_delete
         ' 
-        btn_delete.BackColor = SystemColors.Highlight
+        btn_delete.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
+        btn_delete.BackColor = SystemColors.ControlLightLight
         btn_delete.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        btn_delete.Location = New Point(696, 248)
+        btn_delete.Image = My.Resources.Resources.trash_solid_24
+        btn_delete.ImageAlign = ContentAlignment.MiddleRight
+        btn_delete.Location = New Point(840, 248)
         btn_delete.Name = "btn_delete"
         btn_delete.Size = New Size(75, 33)
         btn_delete.TabIndex = 8
         btn_delete.Text = "DELETE"
+        btn_delete.TextAlign = ContentAlignment.MiddleLeft
         btn_delete.UseVisualStyleBackColor = False
         ' 
         ' btn_close
         ' 
-        btn_close.Location = New Point(713, 415)
+        btn_close.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
+        btn_close.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_close.Image = My.Resources.Resources.close
+        btn_close.ImageAlign = ContentAlignment.MiddleRight
+        btn_close.Location = New Point(840, 402)
         btn_close.Name = "btn_close"
-        btn_close.Size = New Size(75, 23)
+        btn_close.Size = New Size(75, 36)
         btn_close.TabIndex = 9
         btn_close.Text = "CLOSE"
+        btn_close.TextAlign = ContentAlignment.MiddleLeft
         btn_close.UseVisualStyleBackColor = True
         ' 
         ' combo_utype
         ' 
+        combo_utype.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         combo_utype.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         combo_utype.FormattingEnabled = True
         combo_utype.Items.AddRange(New Object() {"ADMIN", "USER"})
-        combo_utype.Location = New Point(630, 162)
+        combo_utype.Location = New Point(774, 162)
         combo_utype.Name = "combo_utype"
         combo_utype.Size = New Size(100, 23)
         combo_utype.TabIndex = 10
@@ -136,7 +155,7 @@ Partial Class edit_users
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Bisque
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(973, 450)
         Controls.Add(combo_utype)
         Controls.Add(btn_close)
         Controls.Add(btn_delete)
@@ -147,8 +166,11 @@ Partial Class edit_users
         Controls.Add(Label1)
         Controls.Add(txt_password)
         Controls.Add(txt_uname)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        MaximizeBox = False
         Name = "edit_users"
-        Text = "edit_users"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "EDIT USERS"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

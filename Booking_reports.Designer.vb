@@ -37,9 +37,13 @@ Partial Class Booking_reports
         ' 
         ' btn_close
         ' 
-        btn_close.Location = New Point(742, 453)
+        btn_close.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        btn_close.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_close.Image = My.Resources.Resources.close
+        btn_close.ImageAlign = ContentAlignment.MiddleRight
+        btn_close.Location = New Point(961, 434)
         btn_close.Name = "btn_close"
-        btn_close.Size = New Size(75, 23)
+        btn_close.Size = New Size(99, 42)
         btn_close.TabIndex = 15
         btn_close.Text = "CLOSE"
         btn_close.UseVisualStyleBackColor = True
@@ -110,14 +114,15 @@ Partial Class Booking_reports
         ' 
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(0, 54)
+        DataGridView1.Location = New Point(12, 54)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(1104, 358)
+        DataGridView1.Size = New Size(1048, 358)
         DataGridView1.TabIndex = 18
         ' 
         ' lbl_total
         ' 
+        lbl_total.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         lbl_total.AutoSize = True
         lbl_total.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point)
         lbl_total.Location = New Point(93, 434)
@@ -130,7 +135,7 @@ Partial Class Booking_reports
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1116, 488)
+        ClientSize = New Size(1072, 488)
         Controls.Add(lbl_total)
         Controls.Add(DataGridView1)
         Controls.Add(ComboBox1)
@@ -141,9 +146,11 @@ Partial Class Booking_reports
         Controls.Add(DateTimePicker1)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        MaximizeBox = False
         Name = "Booking_reports"
-        Text = "Booking_reports"
-        WindowState = FormWindowState.Maximized
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Booking Reports"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

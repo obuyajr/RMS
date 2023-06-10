@@ -298,7 +298,7 @@ Partial Class Book_Rooms
         ' Panel1
         ' 
         Panel1.BackColor = Color.White
-        Panel1.BorderStyle = BorderStyle.Fixed3D
+        Panel1.BorderStyle = BorderStyle.FixedSingle
         Panel1.Location = New Point(774, 13)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(396, 417)

@@ -33,3 +33,4 @@ C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.edit_use
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.Booking_reports.resources
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.Teller_var_table.resources
 C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.check_out.resources
+C:\Users\felix\OneDrive\Desktop\VB net\RMS\obj\Debug\net6.0-windows\RMS.Payment.resources

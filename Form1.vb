@@ -9,6 +9,10 @@ Public Class Form1
         If String.IsNullOrWhiteSpace(txt_uname.Text) OrElse String.IsNullOrWhiteSpace(txt_pwd.Text) OrElse combo_utype.SelectedItem Is Nothing Then
             MessageBox.Show("Please fill in all fields.", "Incomplete Form", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
+
+
+
+
             Return
         End If
 
@@ -58,8 +62,9 @@ Public Class Form1
 
                 MessageBox.Show("Incorrect DETAILS!! .", "WRONG DETAILS", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
+
                 ' Clear all fields
-                txt_uname.Text = ""
+                'txt_uname.Text = ""
                 txt_pwd.Text = ""
                 combo_utype.SelectedItem = Nothing
             End If

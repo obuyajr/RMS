@@ -22,13 +22,16 @@ Partial Class user_dashbord
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         btn_logout = New Button()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
         ToolStripStatusLabel2 = New ToolStripStatusLabel()
+        ToolStripStatusLabel3 = New ToolStripStatusLabel()
         Panel1 = New Panel()
         btn_checkout = New Button()
         btn_bookRoom = New Button()
+        Timer1 = New Timer(components)
         StatusStrip1.SuspendLayout()
         Panel1.SuspendLayout()
         SuspendLayout()
@@ -49,7 +52,7 @@ Partial Class user_dashbord
         ' 
         ' StatusStrip1
         ' 
-        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2})
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2, ToolStripStatusLabel3})
         StatusStrip1.Location = New Point(0, 432)
         StatusStrip1.Name = "StatusStrip1"
         StatusStrip1.Size = New Size(800, 22)
@@ -67,6 +70,12 @@ Partial Class user_dashbord
         ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
         ToolStripStatusLabel2.Size = New Size(119, 17)
         ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
+        ' 
+        ' ToolStripStatusLabel3
+        ' 
+        ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        ToolStripStatusLabel3.Size = New Size(119, 17)
+        ToolStripStatusLabel3.Text = "ToolStripStatusLabel3"
         ' 
         ' Panel1
         ' 
@@ -106,6 +115,9 @@ Partial Class user_dashbord
         btn_bookRoom.TextAlign = ContentAlignment.BottomCenter
         btn_bookRoom.UseVisualStyleBackColor = True
         ' 
+        ' Timer1
+        ' 
+        ' 
         ' user_dashbord
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -132,4 +144,6 @@ Partial Class user_dashbord
     Friend WithEvents btn_bookRoom As Button
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents btn_checkout As Button
+    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents Timer1 As Timer
 End Class

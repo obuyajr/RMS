@@ -123,6 +123,7 @@ Public Class Book_Rooms
         End If
     End Sub
 
+
     Private Sub PrintDocument_PrintPage(sender As Object, e As PrintPageEventArgs)
         ' Define the content to be printed
         Dim content As String = "Booking Details:" & Environment.NewLine &

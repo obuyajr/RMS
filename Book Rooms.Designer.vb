@@ -120,7 +120,7 @@ Partial Class Book_Rooms
         ' 
         checkin_date.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         checkin_date.Font = New Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        checkin_date.Location = New Point(927, 294)
+        checkin_date.Location = New Point(171, 271)
         checkin_date.Name = "checkin_date"
         checkin_date.Size = New Size(230, 25)
         checkin_date.TabIndex = 5
@@ -164,7 +164,7 @@ Partial Class Book_Rooms
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label6.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        Label6.Location = New Point(832, 300)
+        Label6.Location = New Point(65, 279)
         Label6.Name = "Label6"
         Label6.Size = New Size(56, 15)
         Label6.TabIndex = 9
@@ -317,6 +317,8 @@ Partial Class Book_Rooms
         Panel1.BorderStyle = BorderStyle.FixedSingle
         Panel1.Controls.Add(txt_total)
         Panel1.Controls.Add(Label8)
+        Panel1.Controls.Add(Label6)
+        Panel1.Controls.Add(checkin_date)
         Panel1.Location = New Point(757, 14)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(501, 453)
@@ -348,11 +350,9 @@ Partial Class Book_Rooms
         Controls.Add(txt_rates)
         Controls.Add(txt_roomNo)
         Controls.Add(Label7)
-        Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(checkout_date)
-        Controls.Add(checkin_date)
         Controls.Add(Label3)
         Controls.Add(DataGridView1)
         Controls.Add(Label2)

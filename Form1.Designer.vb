@@ -72,7 +72,7 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.White
+        Label1.BackColor = Color.Gray
         Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.Location = New Point(40, 117)
         Label1.Name = "Label1"
@@ -121,9 +121,9 @@ Partial Class Form1
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.BackColor = Color.White
+        Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Gabriola", 36F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(105, 9)
+        Label4.Location = New Point(60, 9)
         Label4.Name = "Label4"
         Label4.Size = New Size(359, 88)
         Label4.TabIndex = 8
@@ -133,8 +133,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Gray
-        BackgroundImage = My.Resources.Resources.building_house_solid_72___Copy
+        BackColor = Color.White
         ClientSize = New Size(506, 344)
         Controls.Add(Label4)
         Controls.Add(txt_pwd)
@@ -145,7 +144,7 @@ Partial Class Form1
         Controls.Add(combo_utype)
         Controls.Add(btn_close)
         Controls.Add(btn_login)
-        FormBorderStyle = FormBorderStyle.FixedSingle
+        FormBorderStyle = FormBorderStyle.None
         MaximizeBox = False
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen

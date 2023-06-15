@@ -75,7 +75,17 @@ Public Class Book_Rooms
             ' Calculate the total amount
             Dim rates As Decimal = Decimal.Parse(txt_rates.Text)
             Dim totalAmount As Decimal = totalDays * rates
+            '
+            ' Check if any required field is empty
+            If String.IsNullOrEmpty(txt_guestName.Text) OrElse
+               String.IsNullOrEmpty(txt_phoneNo.Text) OrElse
+                String.IsNullOrEmpty(txt_total.Text) Then
 
+                ' Display an error message if any field is empty
+                MessageBox.Show("Please fill in all the required fields.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return ' Exit the method early
+            End If
+            '
             ' Insert a new booking record into the bookings table
             Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total, teller_name, time_stamp) " &
                         "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total, @TellerName, GETDATE())"

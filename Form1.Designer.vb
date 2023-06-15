@@ -49,10 +49,10 @@ Partial Class Form1
         ' btn_close
         ' 
         btn_close.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
-        btn_close.BackColor = Color.Yellow
+        btn_close.BackColor = Color.LimeGreen
         btn_close.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_close.Image = My.Resources.Resources.close
-        btn_close.ImageAlign = ContentAlignment.MiddleRight
+        btn_close.ImageAlign = ContentAlignment.MiddleLeft
         btn_close.Location = New Point(321, 277)
         btn_close.Name = "btn_close"
         btn_close.Size = New Size(98, 46)
@@ -62,21 +62,22 @@ Partial Class Form1
         ' 
         ' combo_utype
         ' 
+        combo_utype.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         combo_utype.FormattingEnabled = True
         combo_utype.Items.AddRange(New Object() {"ADMIN", "USER"})
-        combo_utype.Location = New Point(146, 221)
+        combo_utype.Location = New Point(146, 213)
         combo_utype.Name = "combo_utype"
-        combo_utype.Size = New Size(121, 23)
+        combo_utype.Size = New Size(196, 28)
         combo_utype.TabIndex = 2
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.Gray
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(40, 117)
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(39, 112)
         Label1.Name = "Label1"
-        Label1.Size = New Size(71, 15)
+        Label1.Size = New Size(101, 21)
         Label1.TabIndex = 3
         Label1.Text = "USERNAME"
         ' 
@@ -84,10 +85,10 @@ Partial Class Form1
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.White
-        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(40, 179)
+        Label2.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(38, 167)
         Label2.Name = "Label2"
-        Label2.Size = New Size(73, 15)
+        Label2.Size = New Size(102, 21)
         Label2.TabIndex = 4
         Label2.Text = "PASSWORD"
         ' 
@@ -95,28 +96,35 @@ Partial Class Form1
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.White
-        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(49, 224)
+        Label3.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.Location = New Point(50, 219)
         Label3.Name = "Label3"
-        Label3.Size = New Size(64, 15)
+        Label3.Size = New Size(90, 21)
         Label3.TabIndex = 5
         Label3.Text = "USERTYPE"
         ' 
         ' txt_uname
         ' 
         txt_uname.CharacterCasing = CharacterCasing.Upper
-        txt_uname.Location = New Point(146, 114)
+        txt_uname.Font = New Font("Segoe UI Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
+        txt_uname.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        txt_uname.Location = New Point(146, 106)
         txt_uname.Name = "txt_uname"
-        txt_uname.Size = New Size(196, 23)
+        txt_uname.Size = New Size(196, 33)
         txt_uname.TabIndex = 6
+        txt_uname.TextAlign = HorizontalAlignment.Center
         ' 
         ' txt_pwd
         ' 
         txt_pwd.CharacterCasing = CharacterCasing.Upper
-        txt_pwd.Location = New Point(146, 176)
+        txt_pwd.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        txt_pwd.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
+        txt_pwd.Location = New Point(146, 161)
         txt_pwd.Name = "txt_pwd"
-        txt_pwd.Size = New Size(196, 23)
+        txt_pwd.PasswordChar = "#"c
+        txt_pwd.Size = New Size(196, 33)
         txt_pwd.TabIndex = 7
+        txt_pwd.TextAlign = HorizontalAlignment.Center
         ' 
         ' Label4
         ' 
@@ -133,6 +141,9 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoScroll = True
+        AutoSize = True
+        AutoSizeMode = AutoSizeMode.GrowAndShrink
         BackColor = Color.White
         ClientSize = New Size(506, 344)
         Controls.Add(Label4)
@@ -144,8 +155,7 @@ Partial Class Form1
         Controls.Add(combo_utype)
         Controls.Add(btn_close)
         Controls.Add(btn_login)
-        FormBorderStyle = FormBorderStyle.None
-        MaximizeBox = False
+        FormBorderStyle = FormBorderStyle.Fixed3D
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
         Text = "HAPPY CHOICE LTD"

@@ -42,7 +42,7 @@ Partial Class user_dashbord
         btn_logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_logout.Image = My.Resources.Resources.log_out_circle_regular_48
         btn_logout.ImageAlign = ContentAlignment.TopCenter
-        btn_logout.Location = New Point(693, 3)
+        btn_logout.Location = New Point(690, 19)
         btn_logout.Name = "btn_logout"
         btn_logout.Size = New Size(71, 70)
         btn_logout.TabIndex = 0
@@ -86,7 +86,7 @@ Partial Class user_dashbord
         Panel1.Controls.Add(btn_logout)
         Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(776, 91)
+        Panel1.Size = New Size(776, 110)
         Panel1.TabIndex = 2
         ' 
         ' btn_checkout
@@ -94,7 +94,7 @@ Partial Class user_dashbord
         btn_checkout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_checkout.Image = My.Resources.Resources.log_out_regular_48
         btn_checkout.ImageAlign = ContentAlignment.TopCenter
-        btn_checkout.Location = New Point(150, 3)
+        btn_checkout.Location = New Point(151, 19)
         btn_checkout.Name = "btn_checkout"
         btn_checkout.Size = New Size(78, 70)
         btn_checkout.TabIndex = 1
@@ -107,7 +107,7 @@ Partial Class user_dashbord
         btn_bookRoom.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_bookRoom.Image = My.Resources.Resources.book_regular_48
         btn_bookRoom.ImageAlign = ContentAlignment.TopCenter
-        btn_bookRoom.Location = New Point(12, 3)
+        btn_bookRoom.Location = New Point(14, 19)
         btn_bookRoom.Name = "btn_bookRoom"
         btn_bookRoom.Size = New Size(80, 70)
         btn_bookRoom.TabIndex = 0

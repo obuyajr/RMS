@@ -33,12 +33,14 @@ Partial Class add_users
         Panel1 = New Panel()
         Button2 = New Button()
         Panel2 = New Panel()
+        Label4 = New Label()
         Panel1.SuspendLayout()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' btn_add
         ' 
-        btn_add.BackColor = Color.Snow
+        btn_add.BackColor = Color.Red
         btn_add.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btn_add.Location = New Point(20, 209)
         btn_add.Name = "btn_add"
@@ -109,13 +111,14 @@ Partial Class add_users
         ' 
         ' Button1
         ' 
+        Button1.BackColor = Color.Orange
         Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Button1.Location = New Point(217, 430)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 35)
         Button1.TabIndex = 7
         Button1.Text = "CLOSE"
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Panel1
         ' 
@@ -132,12 +135,12 @@ Partial Class add_users
         Panel1.Controls.Add(Label2)
         Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(308, 472)
+        Panel1.Size = New Size(308, 509)
         Panel1.TabIndex = 8
         ' 
         ' Button2
         ' 
-        Button2.BackColor = Color.Snow
+        Button2.BackColor = Color.Red
         Button2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Button2.Location = New Point(177, 209)
         Button2.Name = "Button2"
@@ -149,10 +152,21 @@ Partial Class add_users
         ' Panel2
         ' 
         Panel2.BorderStyle = BorderStyle.Fixed3D
+        Panel2.Controls.Add(Label4)
         Panel2.Location = New Point(326, 12)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(468, 472)
+        Panel2.Size = New Size(468, 509)
         Panel2.TabIndex = 9
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.Location = New Point(188, 10)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(90, 20)
+        Label4.TabIndex = 0
+        Label4.Text = "User Rights"
         ' 
         ' add_users
         ' 
@@ -167,6 +181,8 @@ Partial Class add_users
         Text = "ADD USERS"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -181,4 +197,5 @@ Partial Class add_users
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label4 As Label
 End Class

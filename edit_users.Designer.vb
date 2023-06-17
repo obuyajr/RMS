@@ -154,7 +154,7 @@ Partial Class edit_users
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Bisque
+        BackColor = Color.AntiqueWhite
         ClientSize = New Size(973, 450)
         Controls.Add(combo_utype)
         Controls.Add(btn_close)
@@ -170,7 +170,7 @@ Partial Class edit_users
         MaximizeBox = False
         Name = "edit_users"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "EDIT USERS"
+        Text = "Edit Users"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

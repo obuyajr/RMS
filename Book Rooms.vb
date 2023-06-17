@@ -8,6 +8,8 @@ Public Class Book_Rooms
     Dim con As New SqlConnection
     Dim cmd As New SqlCommand
     Dim checkinDate As Date
+    Dim rates As Decimal
+    Dim totalAmounts As Decimal
 
 
 
@@ -149,8 +151,8 @@ Public Class Book_Rooms
                     insertCmd.Parameters.AddWithValue("@PhoneNumber", txt_phoneNo.Text)
                     insertCmd.Parameters.AddWithValue("@CheckinDate", checkinDate)
                     insertCmd.Parameters.AddWithValue("@CheckoutDate", checkoutDate)
-                    insertCmd.Parameters.AddWithValue("@Total", totalAmount)
-                    insertCmd.Parameters.AddWithValue("@TellerName", ToolStripStatusLabel3.Text)
+                insertCmd.Parameters.AddWithValue("@Total", totalAmounts)
+                insertCmd.Parameters.AddWithValue("@TellerName", ToolStripStatusLabel3.Text)
                     insertCmd.ExecuteNonQuery()
 
                 End Using
@@ -313,16 +315,16 @@ Public Class Book_Rooms
         Else
 
             ' Calculate the number of days
-            checkinDate = DateTime.Parse(checkin_date.Value)
-            checkoutDate = DateTime.Parse(checkout_date.Value)
-            totalDays = (checkoutDate - checkinDate).Days
+            Dim checkinDate As Date = DateTime.Parse(checkin_date.Value)
+            Dim checkoutDate As Date = DateTime.Parse(checkout_date.Value)
+            Dim totalDays As Integer = (checkoutDate - checkinDate).Days
 
             ' Calculate the total amount
-            ratez = Decimal.Parse(txt_rates.Text)
-            totalAmountz = totalDays * ratez
+            rates = Decimal.Parse(txt_rates.Text)
+            totalAmounts = totalDays * rates
 
             'Update the total amount text box
-            txt_total.Text = totalAmountz.ToString()
+            txt_total.Text = totalAmounts.ToString()
             ' Calculate the total amount
 
 

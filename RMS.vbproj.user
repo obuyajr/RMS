@@ -40,6 +40,9 @@
     <Compile Update="Payment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RoomAvailability.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Teller_var_table.vb">
       <SubType>Form</SubType>
     </Compile>

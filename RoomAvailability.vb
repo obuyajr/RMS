@@ -11,7 +11,8 @@ Public Class RoomAvailability
         End If
         con.Open()
 
-        Dim query As String = "SELECT * FROM bookings WHERE room_status = 'BOOKED'"
+        Dim query As String = "SELECT  * FROM rooms WHERE room_status = 'BOOKED'"
+
 
         Dim adapter As New SqlDataAdapter(query, con)
         Dim dataTable As New DataTable()

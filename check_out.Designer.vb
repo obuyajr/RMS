@@ -50,7 +50,7 @@ Partial Class check_out
         btn_check_out.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         btn_check_out.BackColor = Color.IndianRed
         btn_check_out.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        btn_check_out.Image = My.Resources.Resources.check_double_regular_24
+        btn_check_out.Image = My.Resources.Resources.calendar_check_solid_24
         btn_check_out.ImageAlign = ContentAlignment.MiddleRight
         btn_check_out.Location = New Point(636, 109)
         btn_check_out.Name = "btn_check_out"
@@ -152,7 +152,7 @@ Partial Class check_out
         MaximizeBox = False
         Name = "check_out"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "ROOM CHECKOUT"
+        Text = "Room Checkout"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()

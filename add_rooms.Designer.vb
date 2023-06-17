@@ -40,26 +40,26 @@ Partial Class add_rooms
         ' txt_roomNo
         ' 
         txt_roomNo.CharacterCasing = CharacterCasing.Upper
-        txt_roomNo.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txt_roomNo.Font = New Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
         txt_roomNo.Location = New Point(142, 44)
         txt_roomNo.Name = "txt_roomNo"
-        txt_roomNo.Size = New Size(121, 23)
+        txt_roomNo.Size = New Size(121, 25)
         txt_roomNo.TabIndex = 0
         ' 
         ' txt_rates
         ' 
         txt_rates.BackColor = SystemColors.InfoText
         txt_rates.CharacterCasing = CharacterCasing.Upper
-        txt_rates.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txt_rates.Font = New Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
         txt_rates.ForeColor = Color.Red
         txt_rates.Location = New Point(142, 124)
         txt_rates.Name = "txt_rates"
-        txt_rates.Size = New Size(100, 23)
+        txt_rates.Size = New Size(100, 25)
         txt_rates.TabIndex = 1
         ' 
         ' btn_save_new
         ' 
-        btn_save_new.Image = My.Resources.Resources.check_double_regular_241
+        btn_save_new.Image = My.Resources.Resources.save_regular_36
         btn_save_new.ImageAlign = ContentAlignment.MiddleRight
         btn_save_new.Location = New Point(42, 10)
         btn_save_new.Name = "btn_save_new"
@@ -84,6 +84,7 @@ Partial Class add_rooms
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Tan
         Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.Location = New Point(61, 47)
         Label1.Name = "Label1"
@@ -94,6 +95,7 @@ Partial Class add_rooms
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Tan
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.Location = New Point(56, 87)
         Label2.Name = "Label2"
@@ -104,6 +106,7 @@ Partial Class add_rooms
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Tan
         Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.Location = New Point(78, 132)
         Label3.Name = "Label3"
@@ -113,29 +116,30 @@ Partial Class add_rooms
         ' 
         ' combo_roomType
         ' 
-        combo_roomType.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        combo_roomType.Font = New Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
         combo_roomType.FormattingEnabled = True
         combo_roomType.Items.AddRange(New Object() {"DELUXE", "NORMAL"})
         combo_roomType.Location = New Point(142, 84)
         combo_roomType.Name = "combo_roomType"
-        combo_roomType.Size = New Size(121, 23)
+        combo_roomType.Size = New Size(121, 25)
         combo_roomType.TabIndex = 9
         ' 
         ' combo_status
         ' 
         combo_status.BackColor = SystemColors.Info
-        combo_status.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        combo_status.Font = New Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
         combo_status.ForeColor = Color.Lime
         combo_status.FormattingEnabled = True
         combo_status.Items.AddRange(New Object() {"UNBOOKED"})
         combo_status.Location = New Point(142, 164)
         combo_status.Name = "combo_status"
-        combo_status.Size = New Size(121, 23)
+        combo_status.Size = New Size(121, 25)
         combo_status.TabIndex = 10
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.BackColor = Color.Tan
         Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label4.Location = New Point(78, 172)
         Label4.Name = "Label4"
@@ -145,22 +149,24 @@ Partial Class add_rooms
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.Wheat
+        Panel1.BackColor = Color.Tan
+        Panel1.BorderStyle = BorderStyle.FixedSingle
         Panel1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Panel1.Location = New Point(19, 12)
+        Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(593, 195)
+        Panel1.Size = New Size(607, 209)
         Panel1.TabIndex = 12
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.Wheat
+        Panel2.BackColor = Color.Tan
+        Panel2.BorderStyle = BorderStyle.Fixed3D
         Panel2.Controls.Add(btn_save_new)
         Panel2.Controls.Add(btn_close)
         Panel2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Panel2.Location = New Point(19, 227)
+        Panel2.Location = New Point(12, 227)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(593, 55)
+        Panel2.Size = New Size(607, 55)
         Panel2.TabIndex = 13
         ' 
         ' add_rooms

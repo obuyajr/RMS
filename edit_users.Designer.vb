@@ -100,7 +100,7 @@ Partial Class edit_users
         btn_edit.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         btn_edit.BackColor = SystemColors.ControlLightLight
         btn_edit.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        btn_edit.Image = My.Resources.Resources.edit_alt_regular_24
+        btn_edit.Image = My.Resources.Resources.edit_alt_solid_24
         btn_edit.ImageAlign = ContentAlignment.MiddleRight
         btn_edit.Location = New Point(684, 248)
         btn_edit.Name = "btn_edit"

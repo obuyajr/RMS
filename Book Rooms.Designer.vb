@@ -359,11 +359,14 @@ Partial Class Book_Rooms
         ' 
         Button1.BackColor = Color.Brown
         Button1.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.Image = My.Resources.Resources.calculator_solid_24
+        Button1.ImageAlign = ContentAlignment.MiddleLeft
         Button1.Location = New Point(47, 391)
         Button1.Name = "Button1"
-        Button1.Size = New Size(125, 42)
+        Button1.Size = New Size(135, 42)
         Button1.TabIndex = 25
         Button1.Text = "CALCULATE"
+        Button1.TextAlign = ContentAlignment.MiddleRight
         Button1.UseVisualStyleBackColor = False
         ' 
         ' Panel3

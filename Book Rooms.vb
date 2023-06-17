@@ -130,61 +130,61 @@ Public Class Book_Rooms
                String.IsNullOrEmpty(txt_phoneNo.Text) OrElse
                String.IsNullOrEmpty(txt_total.Text) Then
 
-                    ' Display an error message if any field is empty
-                    MessageBox.Show("Please fill in all the required fields.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    Return ' Exit the method early
+                ' Display an error message if any field is empty
+                MessageBox.Show("Please fill in all the required fields.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return ' Exit the method early
 
-                End If
+            End If
 
-                '
-                ' Insert a new booking record into the bookings table
-                Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total, teller_name, time_stamp) " &
-                        "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total, @TellerName, GETDATE())"
+            '
+            ' Insert a new booking record into the bookings table
+            Dim insertQuery As String = "INSERT INTO bookings (room_no, room_type, rates, room_status, guest_name, phone_number, checkin_date, checkout_date, total, teller_name, time_stamp) " &
+                    "VALUES (@RoomNo, @RoomType, @Rates, @RoomStatus, @GuestName, @PhoneNumber, @CheckinDate, @CheckoutDate, @Total, @TellerName, GETDATE())"
 
-                Using insertCmd As New SqlCommand(insertQuery, con)
+            Using insertCmd As New SqlCommand(insertQuery, con)
 
-                    insertCmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
-                    insertCmd.Parameters.AddWithValue("@RoomType", roomType.Text)
-                    insertCmd.Parameters.AddWithValue("@Rates", rates)
-                    insertCmd.Parameters.AddWithValue("@RoomStatus", "Booked")
-                    insertCmd.Parameters.AddWithValue("@GuestName", txt_guestName.Text)
-                    insertCmd.Parameters.AddWithValue("@PhoneNumber", txt_phoneNo.Text)
-                    insertCmd.Parameters.AddWithValue("@CheckinDate", checkinDate)
-                    insertCmd.Parameters.AddWithValue("@CheckoutDate", checkoutDate)
+                insertCmd.Parameters.AddWithValue("@RoomNo", txt_roomNo.Text)
+                insertCmd.Parameters.AddWithValue("@RoomType", roomType.Text)
+                insertCmd.Parameters.AddWithValue("@Rates", rates)
+                insertCmd.Parameters.AddWithValue("@RoomStatus", "Booked")
+                insertCmd.Parameters.AddWithValue("@GuestName", txt_guestName.Text)
+                insertCmd.Parameters.AddWithValue("@PhoneNumber", txt_phoneNo.Text)
+                insertCmd.Parameters.AddWithValue("@CheckinDate", checkinDate)
+                insertCmd.Parameters.AddWithValue("@CheckoutDate", checkoutDate)
                 insertCmd.Parameters.AddWithValue("@Total", totalAmounts)
                 insertCmd.Parameters.AddWithValue("@TellerName", ToolStripStatusLabel3.Text)
-                    insertCmd.ExecuteNonQuery()
+                insertCmd.ExecuteNonQuery()
 
-                End Using
+            End Using
 
-                ' Show a success message for the booking
-                MessageBox.Show("Room booked successfully!", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-
-                ' Print Preview
-                Dim printDocument As New PrintDocument()
-                AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
-
-                Dim printPreviewDialog As New PrintPreviewDialog()
-                printPreviewDialog.Document = printDocument
-                printPreviewDialog.ShowDialog()
+            ' Show a success message for the booking
+            MessageBox.Show("Room booked successfully!", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
-                ' Clear the input fields and update the grid
-                txt_roomNo.Text = ""
-                roomType.Text = ""
-                txt_rates.Text = ""
-                txt_guestName.Text = ""
-                txt_phoneNo.Text = ""
-                txt_total.Text = ""
-                txt_roomStatus.Text = ""
-                txt_total.Text = ""
+            ' Print Preview
+            Dim printDocument As New PrintDocument()
+            AddHandler printDocument.PrintPage, AddressOf PrintDocument_PrintPage
 
-                UpdateGrid()
+            Dim printPreviewDialog As New PrintPreviewDialog()
+            printPreviewDialog.Document = printDocument
+            printPreviewDialog.ShowDialog()
 
 
+            ' Clear the input fields and update the grid
+            txt_roomNo.Text = ""
+            roomType.Text = ""
+            txt_rates.Text = ""
+            txt_guestName.Text = ""
+            txt_phoneNo.Text = ""
+            txt_total.Text = ""
+            txt_roomStatus.Text = ""
+            txt_total.Text = ""
 
-                Else
+            UpdateGrid()
+
+
+
+        Else
 
             ' Display an error message if no room is selected
             MessageBox.Show("Please select a room to book.", "Booking", MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -23,7 +23,6 @@ Partial Class Booking_reports
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         btn_close = New Button()
-        btn_generate = New Button()
         DateTimePicker2 = New DateTimePicker()
         DateTimePicker1 = New DateTimePicker()
         Label2 = New Label()
@@ -32,6 +31,7 @@ Partial Class Booking_reports
         ComboBox1 = New ComboBox()
         DataGridView1 = New DataGridView()
         lbl_total = New Label()
+        btn_generate = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -47,16 +47,6 @@ Partial Class Booking_reports
         btn_close.TabIndex = 15
         btn_close.Text = "CLOSE"
         btn_close.UseVisualStyleBackColor = True
-        ' 
-        ' btn_generate
-        ' 
-        btn_generate.BackColor = Color.IndianRed
-        btn_generate.Location = New Point(742, 8)
-        btn_generate.Name = "btn_generate"
-        btn_generate.Size = New Size(104, 40)
-        btn_generate.TabIndex = 14
-        btn_generate.Text = "GENERATE"
-        btn_generate.UseVisualStyleBackColor = False
         ' 
         ' DateTimePicker2
         ' 
@@ -131,10 +121,23 @@ Partial Class Booking_reports
         lbl_total.TabIndex = 19
         lbl_total.Text = "TOTAL"
         ' 
+        ' btn_generate
+        ' 
+        btn_generate.BackColor = Color.IndianRed
+        btn_generate.Image = My.Resources.Resources.fast_forward_circle_solid_24
+        btn_generate.ImageAlign = ContentAlignment.MiddleLeft
+        btn_generate.Location = New Point(742, 8)
+        btn_generate.Name = "btn_generate"
+        btn_generate.Size = New Size(133, 40)
+        btn_generate.TabIndex = 14
+        btn_generate.Text = "GENERATE"
+        btn_generate.UseVisualStyleBackColor = False
+        ' 
         ' Booking_reports
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.White
         ClientSize = New Size(1072, 488)
         Controls.Add(lbl_total)
         Controls.Add(DataGridView1)
@@ -157,7 +160,6 @@ Partial Class Booking_reports
     End Sub
 
     Friend WithEvents btn_close As Button
-    Friend WithEvents btn_generate As Button
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label2 As Label
@@ -166,4 +168,5 @@ Partial Class Booking_reports
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents lbl_total As Label
+    Friend WithEvents btn_generate As Button
 End Class

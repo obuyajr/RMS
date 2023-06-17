@@ -40,13 +40,16 @@ Partial Class add_users
         ' 
         ' btn_add
         ' 
-        btn_add.BackColor = Color.Red
+        btn_add.BackColor = Color.WhiteSmoke
         btn_add.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_add.Image = My.Resources.Resources.user_plus_solid_24
+        btn_add.ImageAlign = ContentAlignment.MiddleRight
         btn_add.Location = New Point(20, 209)
         btn_add.Name = "btn_add"
         btn_add.Size = New Size(101, 35)
         btn_add.TabIndex = 0
         btn_add.Text = "ADD USER"
+        btn_add.TextAlign = ContentAlignment.MiddleLeft
         btn_add.UseVisualStyleBackColor = False
         ' 
         ' Label1
@@ -111,13 +114,16 @@ Partial Class add_users
         ' 
         ' Button1
         ' 
-        Button1.BackColor = Color.Orange
+        Button1.BackColor = Color.WhiteSmoke
         Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.Image = My.Resources.Resources.close
+        Button1.ImageAlign = ContentAlignment.MiddleRight
         Button1.Location = New Point(217, 430)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 35)
         Button1.TabIndex = 7
         Button1.Text = "CLOSE"
+        Button1.TextAlign = ContentAlignment.MiddleLeft
         Button1.UseVisualStyleBackColor = False
         ' 
         ' Panel1
@@ -140,13 +146,16 @@ Partial Class add_users
         ' 
         ' Button2
         ' 
-        Button2.BackColor = Color.Red
+        Button2.BackColor = Color.WhiteSmoke
         Button2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Button2.Location = New Point(177, 209)
+        Button2.Image = My.Resources.Resources.eraser_solid_24__1_
+        Button2.ImageAlign = ContentAlignment.MiddleRight
+        Button2.Location = New Point(174, 209)
         Button2.Name = "Button2"
-        Button2.Size = New Size(96, 34)
+        Button2.Size = New Size(88, 34)
         Button2.TabIndex = 8
         Button2.Text = "CLEAR"
+        Button2.TextAlign = ContentAlignment.MiddleLeft
         Button2.UseVisualStyleBackColor = False
         ' 
         ' Panel2

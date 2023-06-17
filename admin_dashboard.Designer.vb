@@ -76,11 +76,11 @@ Partial Class admin_dashboard
         ' btn_logout
         ' 
         btn_logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        btn_logout.Image = My.Resources.Resources.log_out_circle_regular_48
+        btn_logout.Image = My.Resources.Resources.log_out_circle_solid_36
         btn_logout.ImageAlign = ContentAlignment.BottomCenter
         btn_logout.Location = New Point(21, 22)
         btn_logout.Name = "btn_logout"
-        btn_logout.Size = New Size(83, 70)
+        btn_logout.Size = New Size(83, 65)
         btn_logout.TabIndex = 1
         btn_logout.Text = "Logout"
         btn_logout.TextAlign = ContentAlignment.TopCenter
@@ -150,7 +150,7 @@ Partial Class admin_dashboard
         Button7.BackColor = Color.Transparent
         Button7.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Button7.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(64))
-        Button7.Image = My.Resources.Resources.check_double_regular_241
+        Button7.Image = My.Resources.Resources.calendar_check_solid_24
         Button7.ImageAlign = ContentAlignment.BottomCenter
         Button7.Location = New Point(150, 20)
         Button7.Name = "Button7"
@@ -210,7 +210,7 @@ Partial Class admin_dashboard
         Button3.BackColor = Color.Transparent
         Button3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Button3.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(64))
-        Button3.Image = My.Resources.Resources.user_name
+        Button3.Image = My.Resources.Resources.user_plus_solid_24
         Button3.ImageAlign = ContentAlignment.BottomCenter
         Button3.Location = New Point(210, 21)
         Button3.Name = "Button3"
@@ -268,7 +268,7 @@ Partial Class admin_dashboard
         Button5.BackColor = Color.Transparent
         Button5.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Button5.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(64))
-        Button5.Image = My.Resources.Resources.book_open_regular_24___Copy
+        Button5.Image = My.Resources.Resources.report_solid_24
         Button5.ImageAlign = ContentAlignment.BottomCenter
         Button5.Location = New Point(33, 17)
         Button5.Name = "Button5"

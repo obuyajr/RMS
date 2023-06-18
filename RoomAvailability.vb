@@ -11,7 +11,8 @@ Public Class RoomAvailability
         End If
         con.Open()
 
-        Dim query As String = "SELECT  * FROM rooms WHERE room_status = 'BOOKED'"
+        ' Dim query As String = "SELECT  * FROM rooms WHERE room_status = 'BOOKED'"
+        Dim query As String = "SELECT * FROM rooms INNER JOIN bookings  ON b.booking_id = c.booking_id WHERE b.room_status = 'BOOKED'"
 
 
         Dim adapter As New SqlDataAdapter(query, con)
@@ -20,5 +21,9 @@ Public Class RoomAvailability
 
         ' Assign the DataTable as the DataGridView's data source
         DataGridView1.DataSource = dataTable
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

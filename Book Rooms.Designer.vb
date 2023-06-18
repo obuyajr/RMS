@@ -54,6 +54,8 @@ Partial Class Book_Rooms
         Panel2 = New Panel()
         ErrorProvider1 = New ErrorProvider(components)
         ErrorProvider2 = New ErrorProvider(components)
+        DateTimePicker1 = New DateTimePicker()
+        btn_generate = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         StatusStrip1.SuspendLayout()
         Panel1.SuspendLayout()
@@ -108,10 +110,10 @@ Partial Class Book_Rooms
         ' 
         DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(10, 14)
+        DataGridView1.Location = New Point(10, 62)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(564, 553)
+        DataGridView1.Size = New Size(564, 505)
         DataGridView1.TabIndex = 3
         ' 
         ' Label3
@@ -395,12 +397,30 @@ Partial Class Book_Rooms
         ' 
         ErrorProvider2.ContainerControl = Me
         ' 
+        ' DateTimePicker1
+        ' 
+        DateTimePicker1.Location = New Point(33, 21)
+        DateTimePicker1.Name = "DateTimePicker1"
+        DateTimePicker1.Size = New Size(252, 25)
+        DateTimePicker1.TabIndex = 24
+        ' 
+        ' btn_generate
+        ' 
+        btn_generate.Location = New Point(395, 21)
+        btn_generate.Name = "btn_generate"
+        btn_generate.Size = New Size(94, 25)
+        btn_generate.TabIndex = 25
+        btn_generate.Text = "Generate"
+        btn_generate.UseVisualStyleBackColor = True
+        ' 
         ' Book_Rooms
         ' 
         AutoScaleDimensions = New SizeF(8F, 17F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.GhostWhite
         ClientSize = New Size(1367, 605)
+        Controls.Add(btn_generate)
+        Controls.Add(DateTimePicker1)
         Controls.Add(txt_roomStatus)
         Controls.Add(roomType)
         Controls.Add(StatusStrip1)
@@ -461,4 +481,6 @@ Partial Class Book_Rooms
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents ErrorProvider2 As ErrorProvider
     Friend WithEvents Button1 As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents btn_generate As Button
 End Class

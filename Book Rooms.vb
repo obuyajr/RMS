@@ -123,12 +123,6 @@ Public Class Book_Rooms
 
 
 
-
-
-
-
-
-
             ' Check if any required field is empty
             If String.IsNullOrEmpty(txt_guestName.Text) OrElse
                String.IsNullOrEmpty(txt_phoneNo.Text) OrElse

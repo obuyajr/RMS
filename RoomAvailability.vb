@@ -11,8 +11,8 @@ Public Class RoomAvailability
         End If
         con.Open()
 
-        ' Dim query As String = "SELECT  * FROM rooms WHERE room_status = 'BOOKED'"
-        Dim query As String = "SELECT * FROM rooms INNER JOIN bookings  ON b.booking_id = c.booking_id WHERE b.room_status = 'BOOKED'"
+        Dim query As String = "SELECT  * FROM rooms WHERE room_status = 'BOOKED'"
+        'Dim query As String = "SELECT * FROM rooms INNER JOIN bookings  ON b.booking_id = c.booking_id WHERE b.room_status = 'BOOKED'"
 
 
         Dim adapter As New SqlDataAdapter(query, con)
